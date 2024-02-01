@@ -1,0 +1,21 @@
+.headerLayout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 60px;
+    height: 60px;
+}
+.navItem {
+    margin-right: 135px;
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+}
+.navItem:active {
+    font-size: 30px;
+}
+.navItem:last-child {
+    margin-right: 0px;
+}

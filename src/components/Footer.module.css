@@ -1,0 +1,46 @@
+.footer {
+    background: #31354C;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.footerMainInfoWrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 140px;
+    padding: 40px 0;
+}
+
+.footerMainInfoWrapper p,h4 {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 50px 0;
+}
+.footerMainInfoWrapper h4 {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 22px 0 0;
+}
+
+.input {
+    margin: 22px 0 0;
+}
+
+.navItem {
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    display: block;
+    margin: 25px 0;
+}
+.navItem:first-child {
+    margin: 67px 0 25px;
+}
+.navItem:active {
+    font-size: 30px;
+}
+

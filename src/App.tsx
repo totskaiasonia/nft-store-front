@@ -5,22 +5,28 @@ import SignInForm from './_auth/forms/SignInForm';
 import SignUpForm from './_auth/forms/SignUpForm';
 import AuthLayout from './_auth/AuthLayout';
 import RootLayout from './_root/RootLayout';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <main>
-      <Routes>
-        <Route element={<AuthLayout/>}>
-          <Route path='/sign-in' element={<SignInForm/>} />
-          <Route path='/sign-up' element={<SignUpForm/>} />
-        </Route>
+    <>
+      <Header/>
+      <main className='main'>
+        <Routes>
+          <Route element={<AuthLayout/>}>
+            <Route path='/sign-in' element={<SignInForm/>} />
+            <Route path='/sign-up' element={<SignUpForm/>} />
+          </Route>
 
-        <Route element={<RootLayout/>}>
-          <Route index element={<Home/>} />
-          <Route path='/store' element={<Store/>}/>
-        </Route>
-      </Routes>
-    </main>
+          <Route element={<RootLayout/>}>
+            <Route index element={<Home/>} />
+            <Route path='/store' element={<Store/>}/>
+          </Route>
+        </Routes>
+      </main>
+      <Footer/>
+    </>
   )
 }
 

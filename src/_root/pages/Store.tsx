@@ -1,7 +1,7 @@
 
 const Store = () => {
   return (
-    <div>Store</div>
+    <div className="layout">Store</div>
   )
 }
 

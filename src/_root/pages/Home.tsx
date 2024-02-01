@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom"
 
 const Home = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <div>Home
-        <button onClick={() => navigate('/store')}>to store</button>
+    <div className="layout">
+      <p>Home</p>
+      <button onClick={() => navigate('/store')}>to store</button>
     </div>
   )
 }
