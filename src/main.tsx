@@ -7,7 +7,9 @@ import { BrowserRouter } from 'react-router-dom'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <React.StrictMode>
+      <div style={{ overflow: 'hidden' }}>
       <App />
+      </div>
     </React.StrictMode>
   </BrowserRouter>,
 )

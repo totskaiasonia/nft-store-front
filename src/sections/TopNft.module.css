@@ -1,0 +1,45 @@
+.topNftSectionWrapper {
+    position: relative;
+}
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 90px;
+}
+.title span {
+    background: linear-gradient(to right, #F88C8C, #5795CA, #57CAB9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.nftCardsWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.paginationBtnsWrapper {
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+    margin: 81px auto;
+    align-items: center;
+}
+.paginationBtn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgb(180, 180, 180);
+}
+
+.active {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #DD67F0;
+}

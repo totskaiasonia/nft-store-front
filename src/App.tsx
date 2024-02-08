@@ -5,8 +5,10 @@ import SignInForm from './_auth/forms/SignInForm';
 import SignUpForm from './_auth/forms/SignUpForm';
 import AuthLayout from './_auth/AuthLayout';
 import RootLayout from './_root/RootLayout';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import {
+  Header,
+  Footer
+} from './sections';
 
 function App() {
   return (

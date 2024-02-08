@@ -1,0 +1,28 @@
+.card {
+    height: 402px;
+    width: 273px;
+    background: url('.././assets/nft-image-1.jpg');
+    background-size: cover;
+    border-radius: 20px;
+}
+.active {
+    height: 490px;
+    width: 332px;
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('.././assets/nft-image-1.jpg');
+    background-size: cover;
+}
+
+.cardInfo {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.cardInfoItem {
+    display: flex;
+    justify-content: space-around;
+}
