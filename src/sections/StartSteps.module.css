@@ -72,8 +72,9 @@
     margin: 0;
     padding: 0;
 }
-.stepsDescWrapper > h2 {
+.stepsDescWrapper > p {
     line-height: 3;
+    margin-top: 30px;
 }
 .stepsBtnWrapper {
     margin-top: auto;
