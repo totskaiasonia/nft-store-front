@@ -1,0 +1,92 @@
+.sectionWrapper {
+    position: relative;
+}
+
+.topCurve {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.topCurve svg {
+    position: relative;
+    display: block;
+    width: calc(257% + 1.3px);
+    height: 162px;
+}
+
+.curveFill {
+    fill: #31354D;
+}
+
+.mainInfoWrapper {
+    background: #31354D;
+    margin-bottom: 20px;
+}
+.mainInfoContent {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 0;
+}
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 90px;
+    margin-bottom: 0;
+}
+.title span {
+    background: linear-gradient(to right, #F88C8C, #5795CA, #57CAB9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.stepsBtnsWrapper {
+    width: 30%;
+}
+.stepsDescWrapper {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stepsBtnsWrapper > button {
+    border: 2px solid #DD67F0;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+    width: 300px;
+    padding: 15px 0;
+    color: white;
+    display: block;
+    margin: 30px auto;
+}
+
+.stepsDescWrapper > h2 {
+    margin: 0;
+    padding: 0;
+}
+.stepsDescWrapper > h2 {
+    line-height: 3;
+}
+.stepsBtnWrapper {
+    margin-top: auto;
+}
+.stepsBtnWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.stepsBtnWrapper > button {
+    width: 300px;
+    padding: 15px;
+    font-size: 16px;
+    background: #7E76DA;
+    color: white;
+    border-radius: 5px;
+}
