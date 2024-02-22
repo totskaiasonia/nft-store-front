@@ -1,0 +1,21 @@
+.wrapper {
+    padding: 0 150px;
+    box-sizing: border-box;
+}
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 90px;
+}
+.title span {
+    background: linear-gradient(to right, #F88C8C, #5795CA, #57CAB9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.commentWrapper {
+    margin-top: 20px;
+}
