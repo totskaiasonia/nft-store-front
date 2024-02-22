@@ -1,0 +1,16 @@
+.nftCollectionMin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(-56deg, #F2DDF9, #C9DFE9);
+    border-radius: 20px;
+    padding: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 10px;
+}
+.nftCollectionMin > img{
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+}

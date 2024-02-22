@@ -1,5 +1,4 @@
-import { Store } from "../../sections";
-import { Intro, StartSteps, TopNft } from "../../sections";
+import { Intro, StartSteps, TopNft, PupularCollections, Store } from "../../sections";
 
 const Home = () => {
   return (
@@ -10,6 +9,7 @@ const Home = () => {
       </div>
       <StartSteps/>
       <Store/>
+      <PupularCollections/>
     </>
   )
 }

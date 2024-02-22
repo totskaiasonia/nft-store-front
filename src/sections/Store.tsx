@@ -5,7 +5,7 @@ import styles from './Store.module.css';
 const Store = () => {
   return (
     <div className='layout'>
-        <h3 className={styles.title}>store</h3>
+        <h3 className={styles.title}>top nft of <span>month</span></h3>
         <div className={styles.storeSettingsWrapper}>
             <ShortCategories/>
             <button className={styles.storeFilterBtn}>

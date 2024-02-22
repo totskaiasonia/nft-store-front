@@ -1,0 +1,55 @@
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 90px;
+}
+.title span {
+    background: linear-gradient(to right, #F88C8C, #5795CA, #57CAB9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+
+.sectionWrapper {
+    position: relative;
+}
+
+.topCurve {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.topCurve svg {
+    position: relative;
+    display: block;
+    width: calc(257% + 1.3px);
+    height: 162px;
+}
+
+.curveFill {
+    fill: #31354D;
+}
+
+.mainInfoWrapper {
+    background: #31354D;
+}
+.mainInfoContent {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 0;
+}
+
+.fullCollectionWrapper {
+    width: 30%;
+}
+.minCollectionsWrapper {
+    width: 60%;
+}

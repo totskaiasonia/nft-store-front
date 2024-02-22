@@ -4,6 +4,7 @@ import Intro from './Intro';
 import TopNft from './TopNft';
 import StartSteps from './StartSteps';
 import Store from './Store';
+import PupularCollections from './PupularCollections';
 
 export {
     Footer,
@@ -11,5 +12,6 @@ export {
     Intro,
     TopNft,
     StartSteps,
-    Store
+    Store,
+    PupularCollections
 }
