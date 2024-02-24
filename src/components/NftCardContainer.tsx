@@ -12,6 +12,8 @@ const NftCardContainer = () => {
       <NftCard/>
       <NftCard/>
       <NftCard/>
+      <NftCard/>
+      <NftCard/>
     </div>
   )
 }
