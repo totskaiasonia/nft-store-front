@@ -1,0 +1,68 @@
+.singUpForm {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 3px 7px 0px rgb(0 0 0 / 25%), 0px 1px 24px 2px rgb(0 0 0 / 25%);
+    padding: 50px 120px;
+    box-sizing: border-box;
+}
+
+.buttonsGroup {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.buttonsGroup > button {
+    width: 200px;
+}
+.activeBtn {
+    border-radius: 50px;
+    background: linear-gradient(50deg ,#BCA4FF, #FFA68A);
+    padding: 10px 40px;
+    font-size: 14px;
+}
+
+.singUpForm form {
+    margin-top: 70px;
+}
+
+.singUpForm form > * {
+    display: block;
+}
+
+.singUpForm label {
+    font-size: 14px;
+    margin: 17px 20px 10px;
+}
+.singUpForm input {
+    margin: 5px 0;
+    width: 40%;
+    padding: 10px 20px;
+    border: 1px solid #B6B6B6;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.singUpForm input:focus-visible {
+    outline: none;
+}
+
+.singUpForm select {
+    margin: 5px 0;
+    width: 40%;
+    padding: 10px 20px;
+    border: 1px solid #B6B6B6;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.singUpForm select:focus-visible {
+    outline: none;
+}
+
+.singUpForm > button {
+    width: 300px;
+    padding: 15px;
+    font-size: 16px;
+    background: #7E76DA;
+    color: white;
+    border-radius: 5px;
+    margin-top: 70px;
+}

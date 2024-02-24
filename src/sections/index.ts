@@ -6,6 +6,8 @@ import StartSteps from './StartSteps';
 import Store from './Store';
 import PupularCollections from './PupularCollections';
 import WhatPeopleSay from './WhatPeopleSay';
+import SignUp from './SignUp';
+import LogIn from './LogIn';
 
 export {
     Footer,
@@ -15,5 +17,7 @@ export {
     StartSteps,
     Store,
     PupularCollections,
-    WhatPeopleSay
+    WhatPeopleSay,
+    SignUp,
+    LogIn
 }
