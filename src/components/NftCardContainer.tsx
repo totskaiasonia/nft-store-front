@@ -1,9 +1,13 @@
 import NftCard from "./NftCard";
 import styles from './NftCardContainer.module.css';
 
-const NftCardContainer = () => {
+interface PropsType {
+  placeIsSpaceBetween: boolean
+}
+
+const NftCardContainer = (props: PropsType) => {
   return (
-    <div className={styles.nftCardsWrapper}>
+    <div className={styles.nftCardsWrapper} style={{justifyContent: props.placeIsSpaceBetween ? 'space-between' : 'flex-start'}}>
       <NftCard/>
       <NftCard/>
       <NftCard/>

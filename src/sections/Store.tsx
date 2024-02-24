@@ -12,7 +12,9 @@ const Store = () => {
                 Filters
             </button>
         </div>
-        <NftCardContainer/>
+        <div style={{marginTop: '50px'}}>
+          <NftCardContainer placeIsSpaceBetween={true}/>
+        </div>
         <button className={styles.exploreBtn}>explore more</button>
     </div>
   )

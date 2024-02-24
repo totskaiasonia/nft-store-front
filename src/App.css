@@ -10,9 +10,10 @@ header {
   position: fixed;
   top: 0px;
   width: 100%;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(40px);
   padding: 5px 0;
   z-index: 100;
+  background: #ffffff45;
 }
 .layout {
   max-width: 1440px;

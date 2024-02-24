@@ -1,0 +1,11 @@
+.storeWrapper {
+    margin: 50px 0;
+    display: flex;
+}
+.storePreferences {
+    width: 20%;
+    padding-top: 80px;
+}
+.storeContent {
+    width: 80%;
+}
