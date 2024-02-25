@@ -1,11 +1,9 @@
-import intro_bg from '../assets/intro-bg-2.png';
 import AuthForm from '../components/AuthForm';
 import styles from './Intro.module.css';
 
 const Intro = () => {
   return (
     <>
-        <img className={styles.introBg} src={intro_bg} alt="" />
         <div className={styles.introWrapper}>
             <div className={styles.introForm}>
               <AuthForm/>
