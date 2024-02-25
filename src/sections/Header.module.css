@@ -19,3 +19,32 @@
 .navItem:last-child {
     margin-right: 0px;
 }
+
+.logInBtn {
+    padding: 8px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+.logInBtn::after {
+    content: '';
+	position: absolute;
+	bottom: -5px;
+	right: 0;
+	height: 2px;
+	width: 100%;
+	transform: scale(0, 1);
+	transition: transform 0.5s;
+	background: #7E76DA;
+	transform-origin: right top;
+}
+.logInBtn:hover:after {
+    transform: scale(1, 1);
+    transform-origin: left top;
+}
+
+.singUpBtn {
+    border-radius: 10px;
+    background: #7E76DA;
+    color: white;
+    padding: 10px 20px;
+}

@@ -10,7 +10,7 @@ const Header = () => {
     <header>
       <div className='layout'>
         <div className={styles.headerLayout}>
-          <button onClick={() => navigate('/')}>
+          <button onClick={() => navigate('/')} style={{width: '170px'}}>
             <img className={styles.logo} src={logo}/>
           </button>
           <div>
@@ -19,8 +19,8 @@ const Header = () => {
             <a className={styles.navItem}>contacts</a>
           </div>
           <div>
-            <button>log in</button>
-            <button>sign up</button>
+            <button className={styles.logInBtn}>log in</button>
+            <button className={styles.singUpBtn}>sign up</button>
           </div>
         </div>
       </div>
