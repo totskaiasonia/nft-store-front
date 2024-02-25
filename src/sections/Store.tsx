@@ -1,6 +1,7 @@
 import NftCardContainer from '../components/NftCardContainer';
 import ShortCategories from '../components/ShortCategories';
 import styles from './Store.module.css';
+import { IoFilter } from "react-icons/io5";
 
 const Store = () => {
   return (
@@ -9,7 +10,8 @@ const Store = () => {
         <div className={styles.storeSettingsWrapper}>
             <ShortCategories/>
             <button className={styles.storeFilterBtn}>
-                Filters
+              <IoFilter size={'1.5rem'}/>
+              <p>Filters</p>
             </button>
         </div>
         <div style={{marginTop: '50px'}}>

@@ -6,3 +6,6 @@
     padding: 10px 0;
     margin-right: 50px;
 }
+.btnsWrapper > button.active {
+    background: linear-gradient(50deg, #d0c0ff, #ffc1ad);
+}
