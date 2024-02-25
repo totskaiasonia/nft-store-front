@@ -17,10 +17,8 @@
 }
 
 .nftCardsWrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     margin-top: 80px;
+    padding-bottom: 30px;
 }
 
 .paginationBtnsWrapper {
@@ -43,3 +41,12 @@
     border: none;
     background: #DD67F0;
 }
+.slick-track {
+    display: flex;
+  }
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }

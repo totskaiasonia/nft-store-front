@@ -1,10 +1,36 @@
 import TopNftCard from '../components/TopNftCard';
 import { useSpring, animated } from 'react-spring';
-import styles from './TopNft.module.css';
 import { useState } from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import styles from   './TopNft.module.css';
+
+import { FaAngleLeft } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 
 const TopNft = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [centerSlideIndex, setCenterSlideIndex] = useState(0);
+  const [cards, setCards] = useState([
+    {name: 'aaa'},
+    {name: 'bbb'},
+    {name: 'ccc'},
+    {name: 'ddd'},
+    {name: 'eee'},
+  ])
+
+  let settings = {
+    className: styles.nftCardsWrapper,
+    centerMode: true,
+    dots: true,
+    infinite: true,
+    speed: 400,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <FaAngleRight color='black'/>,
+    prevArrow: <FaAngleLeft color='black'/>
+  };
 
   const circleStyle1 = useSpring({
     transform: isHovered ? 'scale(1.4)' : 'scale(1)',
@@ -19,20 +45,27 @@ const TopNft = () => {
     config: {  mass: 5, tension: 280, friction: 20 },
   });
 
+  const handleAfterChange = (index: number) => {
+    setCenterSlideIndex(index);
+    console.log(centerSlideIndex);
+  };
+
   return (
     <div className={styles.topNftSectionWrapper} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <h3 className={styles.title}>top nft of <span>month</span></h3>
-        <div className={styles.nftCardsWrapper}>
-          <TopNftCard isActive={false}/>
-          <TopNftCard isActive={true}/>
-          <TopNftCard isActive={false}/>
-        </div>
-
-        <div className={styles.paginationBtnsWrapper}>
-          <button className={`${styles.paginationBtn} ${styles.active}`}></button>
-          <button className={styles.paginationBtn}></button>
-          <button className={styles.paginationBtn}></button>
-        </div>
+        {/* <div className={styles.nftCardsWrapper}> */}
+          <Slider {...settings} afterChange={handleAfterChange}>
+            {
+              cards.map((item, index) => (
+                  index == centerSlideIndex
+                  ?
+                    <TopNftCard isActive={true}/>
+                  :
+                    <TopNftCard isActive={false}/>
+              ))
+            }
+          </Slider>
+        {/* </div>   */}
 
         <animated.div
           style={{

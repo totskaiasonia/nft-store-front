@@ -1,13 +1,23 @@
+.cardOutWrapper {
+    height: 490px;
+    display: flex;
+    align-items: center;
+}
+
 .card {
     height: 402px;
     width: 273px;
-    background: url('.././assets/nft-image-1.jpg');
+    background: url('../assets/nft-image-1.jpg');
     background-size: cover;
     border-radius: 20px;
+    margin: auto;
 }
 .active {
     height: 490px;
     width: 332px;
+    /* transform: translateY(-50%);
+    top: 50%; */
+    z-index: 1000;
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('.././assets/nft-image-1.jpg');
     background-size: cover;
 }
