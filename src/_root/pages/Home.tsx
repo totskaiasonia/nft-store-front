@@ -15,10 +15,18 @@ const Home = () => {
         <Intro/>
         <TopNft/>
       </div>
-      <StartSteps/>
-      <Store/>
-      <PupularCollections/>
-      <WhatPeopleSay/>
+      <div className="top-space-wrapper">
+        <StartSteps/>
+      </div>
+      <div className="top-space-wrapper">
+        <Store/>
+      </div>
+      <div className="top-space-wrapper">
+        <PupularCollections/>
+      </div>
+      <div className="top-space-wrapper">
+        <WhatPeopleSay/>
+      </div>
       <div className="auth-wrapper">
         {
           showSignUp

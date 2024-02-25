@@ -31,3 +31,7 @@ header {
 .auth-wrapper {
   margin: 100px 0;
 }
+
+.top-space-wrapper {
+  margin-top: 100px;
+}
