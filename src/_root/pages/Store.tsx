@@ -1,8 +1,13 @@
 
 import Category from '../../components/Category';
 import NftCardContainer from '../../components/NftCardContainer';
+import MyCheckbox from '../../components/ui/MyCheckbox';
 import MySlider from '../../components/ui/MySlider';
 import styles from './Store.module.css';
+
+import FormLabel from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 const Store = () => {
   return (
@@ -28,8 +33,6 @@ const Store = () => {
                 min={2000}
                 max={2024}
               />
-            </div>
-            <div style={{width: '200px'}}>
               <p>Price</p>
               <MySlider 
                 valueLabelDisplay="auto"
@@ -40,6 +43,50 @@ const Store = () => {
                 defaultValue={[5, 4000]}
                 min={0.01}
                 max={10000}
+              />
+              <p>Author</p>
+              <FormControlLabel
+                control={
+                  <MyCheckbox defaultChecked style={{marginRight: '10px'}}/>
+                }
+                label="Gilad Gray"
+              />
+              <FormControlLabel
+                control={
+                  <MyCheckbox style={{marginRight: '10px'}}/>
+                }
+                label="Tom Smith"
+              />
+              <FormControlLabel
+                control={
+                  <MyCheckbox style={{marginRight: '10px'}}/>
+                }
+                label="Sam Whiten"
+              />
+              <p>Collection</p>
+              <FormControlLabel
+                control={
+                  <MyCheckbox defaultChecked style={{marginRight: '10px'}}/>
+                }
+                label="Bloody miracle"
+              />
+              <FormControlLabel
+                control={
+                  <MyCheckbox style={{marginRight: '10px'}}/>
+                }
+                label="Mirrorrr"
+              />
+              <FormControlLabel
+                control={
+                  <MyCheckbox style={{marginRight: '10px'}}/>
+                }
+                label="Judjment"
+              />
+              <FormControlLabel
+                control={
+                  <MyCheckbox style={{marginRight: '10px', alignSelf: 'start'}}/>
+                }
+                label="Collective unconscious"
               />
             </div>
           </div>

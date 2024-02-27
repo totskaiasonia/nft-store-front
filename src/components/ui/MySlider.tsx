@@ -8,8 +8,8 @@ const MySlider = styled(Slider)({
       border: 'none',
     },
     '& .MuiSlider-thumb': {
-      height: 24,
-      width: 24,
+      height: 16,
+      width: 16,
       backgroundColor: '#fff',
       border: '2px solid currentColor',
       '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
