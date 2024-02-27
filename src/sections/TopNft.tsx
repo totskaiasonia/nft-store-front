@@ -28,6 +28,8 @@ const TopNft = () => {
     speed: 400,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
     nextArrow: <FaAngleRight color='black'/>,
     prevArrow: <FaAngleLeft color='black'/>
   };
