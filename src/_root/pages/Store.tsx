@@ -5,8 +5,6 @@ import MyCheckbox from '../../components/ui/MyCheckbox';
 import MySlider from '../../components/ui/MySlider';
 import styles from './Store.module.css';
 
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 const Store = () => {
