@@ -2,6 +2,7 @@
 import Category from '../../components/Category';
 import NftCardContainer from '../../components/NftCardContainer';
 import MyCheckbox from '../../components/ui/MyCheckbox';
+import MyPagination from '../../components/ui/MyPagination';
 import MySlider from '../../components/ui/MySlider';
 import styles from './Store.module.css';
 
@@ -92,6 +93,7 @@ const Store = () => {
         <div className={styles.storeContent}>
           <h1>3D</h1>
           <NftCardContainer placeIsSpaceBetween={false}/>
+          <MyPagination count={10} style={{marginTop: '50px'}}/>
         </div>
       </div>
     </div>
