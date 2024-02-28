@@ -23,6 +23,56 @@
     font-weight: 600;
 }
 
+.inputGroup {
+    width: 700px;
+    height: 40px;
+    margin: 0 auto;
+    max-width: 50em;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: relative;
+}
+.inputGroup__label {
+    position: absolute;
+    left: 3em;
+    top: -9px;
+    background: #fff;
+    padding: 0 0.5em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    font-size: 0.875em;
+    letter-spacing: 0.1em;
+    color: #ccd;
+    color: #7E76DA;
+    cursor: pointer;
+}
+.inputGroup__input {
+    font-size: 1.25rem;
+    line-height: 1;
+    border-style: none;
+    outline: none;
+    height: calc(1em + 1.6em + 0.5em);
+    width: 100%;
+    padding: 0.8em 1em;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 1.8em;
+    background-size: 200% 100%;
+    transition: background-position 0.8s ease-out;
+}
+.inputGroup__input:hover {
+  background-position: 100% 0;
+}
+
+.inputGroup__input:focus {
+  outline: 2px dashed #7E76DA;
+  outline-offset: 0.5em;
+}
+
 .searchInput {
     width: 700px;
     height: 40px;
