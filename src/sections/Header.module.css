@@ -7,17 +7,21 @@
     width: 60px;
     height: 60px;
 }
+.nav {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
 .navItem {
-    margin-right: 135px;
+    text-align: center;
+    width: 100px;
     color: black;
     font-weight: 400;
     font-size: 16px;
+    display: block;
 }
 .navItem:active {
     font-size: 30px;
-}
-.navItem:last-child {
-    margin-right: 0px;
 }
 
 .logInBtn {

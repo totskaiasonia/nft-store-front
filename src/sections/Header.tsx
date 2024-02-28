@@ -13,7 +13,7 @@ const Header = () => {
           <button onClick={() => navigate('/')} style={{width: '170px'}}>
             <img className={styles.logo} src={logo}/>
           </button>
-          <div>
+          <div className={styles.nav}>
             <a className={styles.navItem} href="/">home</a>
             <a className={styles.navItem} href="/store">store</a>
             <a className={styles.navItem}>contacts</a>
