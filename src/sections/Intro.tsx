@@ -23,6 +23,7 @@ const Intro = () => {
             <label className={styles.inputGroup__label}>search</label>
             <input className={styles.inputGroup__input} placeholder='Bored Ape'/>
           </div>
+          <button className={styles.introBtn}>learn more</button>
           <Slider {...settings} className={styles.categoriesCorousel}>
             <button className={styles.categoryBtn}><div className={styles.glows}></div>3D</button>
             <button className={styles.categoryBtn}><div className={styles.glows}></div>Modern</button>
@@ -39,7 +40,6 @@ const Intro = () => {
             <button className={styles.categoryBtn}><div className={styles.glows}></div>Game</button>
             <button className={styles.categoryBtn}><div className={styles.glows}></div>Micro</button>
           </Slider>
-          <button className={styles.introBtn}>learn more</button>
         </div>
     </>
   )

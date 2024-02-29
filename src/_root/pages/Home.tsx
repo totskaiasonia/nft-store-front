@@ -11,8 +11,8 @@ const Home = () => {
   
   return (
     <>
+      <Intro/>
       <div className="layout">
-        <Intro/>
         <TopNft/>
       </div>
       <div className="top-space-wrapper">
