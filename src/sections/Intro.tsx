@@ -11,6 +11,7 @@ const Intro = () => {
     autoplay: true,
     speed: 3000,
     autoplaySpeed: 3000,
+    pauseOnHover: false,
     cssEase: "linear",
     nextArrow: <></>,
     prevArrow: <></>
@@ -18,6 +19,7 @@ const Intro = () => {
   return (
     <>
         <div className={styles.introWrapper}>
+          
           <p className={styles.introTitle}>QUICK <span>NFT AUCTIONS</span> ON YOUR DEVICE</p>
           <div className={styles.inputGroup}>
             <label className={styles.inputGroup__label}>search</label>
