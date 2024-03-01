@@ -10,13 +10,13 @@ const PupularCollections = () => {
         <h3 className={styles.title}>popular nft <span>collections</span></h3>
         <div className={styles.sectionWrapper}>
                 <Wave style={{display: 'flex'}} 
-                        fill="url(#gradient)"
-                        options={{
-                        height: 30,
-                        amplitude: 30,
+                    fill="url(#gradient)"
+                    options={{
+                        height: 70,
+                        amplitude: 20,
                         speed: 0.25,
                         points: 5
-                        }}>
+                }}>
                     <defs>
                         <linearGradient id="gradient" gradientTransform="rotate(13)">
                             <stop offset="20%"  stopColor="#FEC8F2" />

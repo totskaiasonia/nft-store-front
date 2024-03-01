@@ -12,13 +12,13 @@ const StartSteps = () => {
             <h3 className={styles.title}><span>create and sell</span> your nfts</h3>
             <div className={styles.sectionWrapper}>
                 <Wave style={{display: 'flex'}} 
-                        fill="url(#gradient)"
-                        options={{
-                        height: 30,
-                        amplitude: 30,
+                    fill="url(#gradient)"
+                    options={{
+                        height: 70,
+                        amplitude: 20,
                         speed: 0.25,
                         points: 5
-                        }}>
+                }}>
                     <defs>
                         <linearGradient id="gradient" gradientTransform="rotate(13)">
                             <stop offset="20%"  stopColor="#FEC8F2" />
