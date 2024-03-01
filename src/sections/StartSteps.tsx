@@ -3,6 +3,7 @@ import styles from './StartSteps.module.css';
 
 import '../App.css';
 import { useState } from 'react';
+import MyStepper from '../components/ui/MyStepper';
 
 const StartSteps = () => {
     const [isActive, setIsActive] = useState([true, false, false, false]);
@@ -32,6 +33,9 @@ const StartSteps = () => {
                     </svg>
                 </div>
                 <div className={styles.mainInfoWrapper}>
+                    <div style={{marginTop: '30px'}}>
+                        <MyStepper/>
+                    </div>
                     <div className={`${styles.mainInfoContent} layout`}>
                         <div className={styles.stepsBtnsWrapper}>
 
