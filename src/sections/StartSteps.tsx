@@ -1,6 +1,9 @@
 import Wave from 'react-wavify';
 import styles from './StartSteps.module.css';
 
+import { FaRegCircleUser } from "react-icons/fa6";
+import { PiUserCircleThin } from "react-icons/pi";
+
 import '../App.css';
 import { useState } from 'react';
 import MyStepper from '../components/ui/MyStepper';
@@ -37,13 +40,7 @@ const StartSteps = () => {
                         <MyStepper/>
                     </div>
                     <div className={`${styles.mainInfoContent} layout`}>
-                        <div className={styles.stepsBtnsWrapper}>
-
-                            <button style={{background: isActive[0] ? '#DD67F0' : 'transparent', color: isActive[0] ? 'black' : 'white'}}>sign up</button>
-                            <button>connect wallet</button>
-                            <button>start auction</button>
-                            <button>sell NFT</button>
-                        </div>
+                        <PiUserCircleThin size={200}/>
                         <div className={styles.stepsDescWrapper}>
                             <h2>Sign up</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sequi harum sunt, voluptatem at quam dolorem, provident maxime cupiditate dolor exercitationem unde enim nostrum numquam, optio laborum reiciendis dolore excepturi!</p>

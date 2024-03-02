@@ -45,25 +45,10 @@
     color: transparent;
 }
 
-.stepsBtnsWrapper {
-    width: 30%;
-}
 .stepsDescWrapper {
     width: 60%;
     display: flex;
     flex-direction: column;
-}
-
-.stepsBtnsWrapper > button {
-    border: 2px solid #DD67F0;
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 5px;
-    width: 300px;
-    padding: 15px 0;
-    color: white;
-    display: block;
-    margin: 30px auto;
 }
 
 .stepsDescWrapper > h2 {
@@ -75,16 +60,16 @@
     margin-top: 30px;
 }
 .stepsBtnWrapper {
-    margin-top: auto;
+    margin-top: 80px;
 }
 .stepsBtnWrapper {
     display: flex;
     justify-content: space-between;
 }
 .stepsBtnWrapper > button {
-    width: 300px;
-    padding: 15px;
-    font-size: 16px;
+    width: 250px;
+    padding: 13px;
+    font-size: 14px;
     background: #7E76DA;
     color: white;
     border-radius: 5px;
