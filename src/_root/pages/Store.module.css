@@ -1,8 +1,9 @@
 .storeWrapper {
-    margin: 50px 0;
+    margin: 0 0 50px;
     display: flex;
 }
 .storePreferences {
+    margin-top: 130px;
     width: 20%;
     padding-top: 80px;
 }
