@@ -1,15 +1,12 @@
 import Wave from 'react-wavify';
 import styles from './StartSteps.module.css';
 
-import { FaRegCircleUser } from "react-icons/fa6";
 import { PiUserCircleThin } from "react-icons/pi";
 
 import '../App.css';
-import { useState } from 'react';
 import MyStepper from '../components/ui/MyStepper';
 
 const StartSteps = () => {
-    const [isActive, setIsActive] = useState([true, false, false, false]);
     return (
         <>
             <h3 className={styles.title}><span>create and sell</span> your nfts</h3>
