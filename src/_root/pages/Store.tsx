@@ -93,12 +93,12 @@ const Store = () => {
           </div>
         </div>
         <div className={styles.storeContent}>
-        <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '100px'}}>
-        <Link underline="hover" color="inherit" href="/store">
-          store
-        </Link>
-        <Typography color="text.primary">3D</Typography>
-    </Breadcrumbs>
+          <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '100px'}}>
+            <Link underline="hover" color="inherit" href="/store">
+              store
+            </Link>
+            <Typography color="text.primary">3D</Typography>
+          </Breadcrumbs>
           <h1>3D</h1>
           <NftCardContainer placeIsSpaceBetween={false}/>
           <MyPagination count={10} style={{marginTop: '50px'}}/>
