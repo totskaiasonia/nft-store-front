@@ -1,0 +1,132 @@
+.goodWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+.goodImg {
+    width: 40%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.goodInfo {
+    width: 50%;
+}
+.goodInfo h1 {
+    margin: 0;
+    font-weight: 700;
+}
+.mainInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainInfo_author {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.mainInfo_author p {
+    text-decoration: underline;
+    margin-right: 15px;
+    font-size: 18px;
+}
+.mainInfo_author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+.goodAccessory {
+    display: flex;
+}
+.goodAccessory_collection {
+    display: flex;
+    align-items: center;
+}
+.goodAccessory_collection > p {
+    margin: 0 20px;
+}
+
+.goodAccessory_categories {
+    display: flex;
+}
+
+
+.maxPrice {
+    display: flex;
+    align-items: baseline;
+}
+
+.maxPrice p {
+    font-size: 50px;
+    color: #3AB83A;
+    font-weight: 600;
+    margin: 60px 10px 0 0;
+}
+.maxPrice img {
+    width: 35px;
+    height: 35px;
+}
+
+.makeBid {
+    display: flex;
+    margin: 0px 0 30px;
+}
+.makeBid > input {
+    width: 230px;
+    padding: 10px 20px;
+    border: 1px solid #838383;
+    border-radius: 5px;
+}
+.makeBid > button {
+    background: #7E76DA;
+    color: white;
+    border-radius: 10px;
+    width: 92px;
+    margin-left: 15px;
+}
+
+.recentBids {
+    width: 100%;
+    box-shadow: 0px 3px 7px 0px rgb(0 0 0 / 25%), 0px 1px 24px 2px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    padding: 30px 50px;
+    box-sizing: border-box;
+}
+
+.recentBids h3 {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.biddersWrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+.bidder {
+    display: flex;
+    justify-content: space-between;
+}
+.bidderInfo {
+    display: flex;
+    align-items: center;
+}
+.bidderInfo > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    margin-right: 30px;
+}
+.bidderBid {
+    display: flex;
+}
+.bidderBid p {
+    margin-left: 5px;
+    font-size: 16px;
+    color: #3AB83A;
+}
+.recentBids > button {
+    font-size: 14px;
+    margin-top: 30px;
+}

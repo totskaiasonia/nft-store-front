@@ -1,6 +1,6 @@
 import './App.css'
 import {Routes, Route} from 'react-router-dom';
-import { Home, Store } from './_root/pages';
+import { Good, Home, Store } from './_root/pages';
 import SignInForm from './_auth/forms/SignInForm';
 import SignUpForm from './_auth/forms/SignUpForm';
 import AuthLayout from './_auth/AuthLayout';
@@ -24,6 +24,7 @@ function App() {
           <Route element={<RootLayout/>}>
             <Route index element={<Home/>} />
             <Route path='/store' element={<Store/>}/>
+            <Route path='/store/:nftId' element={<Good/>}/>
           </Route>
         </Routes>
       </main>
