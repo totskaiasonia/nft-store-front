@@ -81,3 +81,21 @@ export const login = async (req, res) => {
         });
     }
 }
+
+export const getById = async (req, res) => {
+    try {
+        const id = req.params.id;
+    
+        const userDoc = await UserModel.findById(id);
+    
+        const {passwordHash, ...userData} = userDoc._doc;
+    
+        return res.status(200).json(
+            userData
+        )
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to get",
+        });
+    }
+}

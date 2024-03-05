@@ -10,7 +10,7 @@ userRouter.get('/users')
 userRouter.post('/auth/login', UserController.login);
 userRouter.post('/auth/register', UserController.register);
 
-userRouter.get('/users/:id')
+userRouter.get('/users/:id', UserController.getById)
 
 userRouter.patch('/users/:id')
 
