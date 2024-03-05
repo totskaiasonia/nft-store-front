@@ -5,6 +5,8 @@ import express from "express";
 import mongoose from 'mongoose';
 
 import router from './routers/router.js';
+import userRouter from './routers/userRouter.js';
+
 import cors from 'cors';
 
 const PORT = 3000;
@@ -19,6 +21,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(router);
+app.use(userRouter);
 
 app.get('/', (req, res) => {
     res.status(200).json({msg: "Root route"});

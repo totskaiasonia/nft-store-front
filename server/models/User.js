@@ -9,6 +9,15 @@ const UserSchema = mongoose.Schema(
         passwordHash: {
             type: String,
             required: true
+        },
+        username: {
+            type: String,
+            required: true
+        },
+        gender: {
+            type: String,
+            enum: ['male', 'female', 'non-binary', 'dont-specify'],
+            default: 'dont-specify'
         }
     },
     {
