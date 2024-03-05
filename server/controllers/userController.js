@@ -53,7 +53,7 @@ export const login = async (req, res) => {
 
         console.log(userDoc._doc)
         
-        if (userDoc == null || await !bcrypt.compare(password, userDoc._doc.passwordHash)) {
+        if (userDoc == null || !bcrypt.compare(password, userDoc._doc.passwordHash)) {
             res.status(401).json({msg: "invalid credentials"});
         }
 
