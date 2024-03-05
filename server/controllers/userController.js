@@ -44,3 +44,40 @@ export const register = async (req, res) => {
     
 
 }
+
+export const login = async (req, res) => {
+    try {
+        const {email, password} = req.body;
+
+        const userDoc = await UserModel.findOne({email: email});
+
+        console.log(userDoc._doc)
+        
+        if (userDoc == null || await !bcrypt.compare(password, userDoc._doc.passwordHash)) {
+            res.status(401).json({msg: "invalid credentials"});
+        }
+
+        const token = jwt.sign(
+            {
+                _id: userDoc._id,
+            },
+            process.env.JWT_PHRASE,
+            {
+                expiresIn: '30d',
+            }
+        );
+
+
+        const {passwordHash, ...userData} = userDoc._doc;
+        res.status(200).json({
+            token,
+            ...userData
+        });
+
+
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to login",
+        });
+    }
+}
