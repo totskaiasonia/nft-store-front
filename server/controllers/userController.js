@@ -51,7 +51,6 @@ export const login = async (req, res) => {
 
         const userDoc = await UserModel.findOne({email: email});
 
-        console.log(userDoc._doc)
         
         if (userDoc == null || !bcrypt.compare(password, userDoc._doc.passwordHash)) {
             res.status(401).json({msg: "invalid credentials"});
@@ -93,6 +92,22 @@ export const getById = async (req, res) => {
         return res.status(200).json(
             userData
         )
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to get",
+        });
+    }
+}
+
+export const getAll = async (req, res) => {
+    try {
+        const users = await UserModel.find();
+        
+        const result = users.map(user => {
+            const {passwordHash, ...userData} = user._doc;
+            return userData;
+        });
+        res.status(200).json(result)
     } catch (error) {
         res.status(500).json({
             message: "Failed to get",
