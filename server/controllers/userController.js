@@ -115,13 +115,44 @@ export const getAll = async (req, res) => {
     }
 }
 
+export const update = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const {username, password, gender} = req.body;
+
+        const userDoc = await UserModel.findById(id);
+        const hash = null;
+        if (!bcrypt.compare(password, userDoc._doc.passwordHash)) {
+            const salt = await bcrypt.genSalt(12);
+            hash = await bcrypt.hash(password, salt);
+        }
+        const update = {
+            email: userDoc._doc.email,
+            passwordHash: hash ? hash : userDoc._doc.passwordHash,
+            username: username,
+            gender: gender
+        }
+
+        const updatedUser = await UserModel.findByIdAndUpdate({_id: id}, update);
+
+        res.status(200).json(
+            updatedUser
+        )
+
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to update",
+        });
+    }
+}
+
 export const remove = async (req, res) => {
     try {
         const id = req.params.id;
     
         const userDoc = await UserModel.findByIdAndDelete(id)
         console.log(userDoc._doc);
-        
+
         const {passwordHash, ...userData} = userDoc._doc;
     
         return res.status(200).json(
@@ -129,7 +160,7 @@ export const remove = async (req, res) => {
         )
     } catch (error) {
         res.status(500).json({
-            message: "Failed to get",
+            message: "Failed to delete",
         });
     }
 }

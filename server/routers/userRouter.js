@@ -12,7 +12,7 @@ userRouter.post('/auth/register', UserController.register);
 
 userRouter.get('/users/:id', UserController.getById)
 
-userRouter.patch('/users/:id')
+userRouter.patch('/users/:id', UserController.update)
 
 userRouter.delete('/users/:id', UserController.remove)
 
