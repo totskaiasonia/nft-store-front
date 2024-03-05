@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 
 const MyPagination = styled(Pagination)({
     '& .MuiPaginationItem-root': {
-      backgroundColor: '#cecbf1',
+      backgroundColor: 'transparent',
       marginRight: '20px'
     },
     '& .MuiPaginationItem-root.Mui-selected': {
