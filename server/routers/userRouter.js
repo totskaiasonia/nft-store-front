@@ -14,7 +14,7 @@ userRouter.get('/users/:id', UserController.getById)
 
 userRouter.patch('/users/:id')
 
-userRouter.delete('/users/:id')
+userRouter.delete('/users/:id', UserController.remove)
 
 
 

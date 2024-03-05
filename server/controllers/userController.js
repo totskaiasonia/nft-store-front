@@ -114,3 +114,22 @@ export const getAll = async (req, res) => {
         });
     }
 }
+
+export const remove = async (req, res) => {
+    try {
+        const id = req.params.id;
+    
+        const userDoc = await UserModel.findByIdAndDelete(id)
+        console.log(userDoc._doc);
+        
+        const {passwordHash, ...userData} = userDoc._doc;
+    
+        return res.status(200).json(
+            userData
+        )
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to get",
+        });
+    }
+}
