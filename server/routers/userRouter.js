@@ -2,20 +2,20 @@ import express from 'express';
 
 import * as UserController from '../controllers/userController.js';
 
-const userRouter = express.Router();
+const router = express.Router();
 
 
-userRouter.get('/users', UserController.getAll)
+router.get('/users', UserController.getAll)
 
-userRouter.post('/auth/login', UserController.login);
-userRouter.post('/auth/register', UserController.register);
+router.post('/auth/login', UserController.login);
+router.post('/auth/register', UserController.register);
 
-userRouter.get('/users/:id', UserController.getById)
+router.get('/users/:id', UserController.getById)
 
-userRouter.patch('/users/:id', UserController.update)
+router.patch('/users/:id', UserController.update)
 
-userRouter.delete('/users/:id', UserController.remove)
+router.delete('/users/:id', UserController.remove)
 
 
 
-export default userRouter;
+export default router;
