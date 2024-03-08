@@ -1,10 +1,19 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-import UserModel from '../models/User.js';
+import express, { Express, Request, Response } from "express";
+
+import {IUser, User as UserModel} from '../models/User.js';
+
+interface RegisterRequesBody {
+    email: string;
+    password: string;
+    username: string;
+    gender: string;
+}
 
 
-export const register = async (req, res) => {
+export const register = async (req: Request<{}, {}, RegisterRequesBody>, res: Response) => {
     try {
         const {email, password, username, gender} = req.body;
 
@@ -24,7 +33,7 @@ export const register = async (req, res) => {
             {
                 _id: userDoc._id,
             },
-            process.env.JWT_PHRASE,
+            process.env.JWT_PHRASE || "your secret phrase",
             {
                 expiresIn: '30d',
             }
@@ -60,7 +69,7 @@ export const login = async (req, res) => {
             {
                 _id: userDoc._id,
             },
-            process.env.JWT_PHRASE,
+            process.env.JWT_PHRASE || "your secret phrase",
             {
                 expiresIn: '30d',
             }
