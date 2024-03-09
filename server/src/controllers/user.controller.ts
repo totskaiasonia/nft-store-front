@@ -1,81 +1,37 @@
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 
 import { Request, Response } from "express";
 
-import {UserModel} from '../models/User.model.js';
+import {IUserModel, UserModel} from '../models/User.model.js';
+import userService from '../services/user.service.js';
+import authService from '../services/auth.service.js';
 
 
 export const register = async (req: Request, res: Response) => {
     try {
         const {email, password, username, gender} = req.body;
 
-        const salt = await bcrypt.genSalt(12);
-        const hash = await bcrypt.hash(password, salt);
+        const userData = await authService.register(email, password, username, gender);
 
-        const user = new UserModel({
-            email,
-            passwordHash: hash,
-            username,
-            gender
-        });
-
-        const userDoc = await user.save();
-
-        const token = jwt.sign(
-            {
-                _id: userDoc._id,
-            },
-            process.env.JWT_PHRASE || "your secret phrase",
-            {
-                expiresIn: '30d',
-            }
-        );
-
-        const {passwordHash, ...userData} = userDoc._doc;
-
-        res.status(200).json({
-            ...userData,
-            token,
-        });
+        res.status(200).json(userData);
     } catch (error) {
+        console.log(error);
         res.status(500).json({
             message: "Failed to register",
         });
     }
-    
-
 }
 
 export const login = async (req: Request, res: Response) => {
     try {
         const {email, password} = req.body;
 
-        const userDoc = await UserModel.findOne({email: email});
+        const userData = await authService.login(email, password);
 
-        
-        if (userDoc == null || !bcrypt.compare(password, userDoc._doc.passwordHash)) {
+        if (!userData)
             res.status(401).json({msg: "invalid credentials"});
-        }
 
-        const token = jwt.sign(
-            {
-                _id: userDoc?._id,
-            },
-            process.env.JWT_PHRASE || "your secret phrase",
-            {
-                expiresIn: '30d',
-            }
-        );
-
-
-        const {passwordHash, ...userData} = userDoc?._doc;
-        res.status(200).json({
-            token,
-            ...userData
-        });
-
-
+        res.status(200).json(userData);
     } catch (error) {
         res.status(500).json({
             message: "Failed to login",
@@ -87,7 +43,7 @@ export const getById = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
     
-        const userDoc = await UserModel.findById(id);
+        const userDoc = await userService.findUserById(id);
     
         const {passwordHash, ...userData} = userDoc?._doc;
     
@@ -103,9 +59,9 @@ export const getById = async (req: Request, res: Response) => {
 
 export const getAll = async (req: Request, res: Response) => {
     try {
-        const users = await UserModel.find();
+        const users: IUserModel[] | null = await userService.findAll();
         
-        const result = users.map(user => {
+        const result = users?.map(user => {
             const {passwordHash, ...userData} = user._doc;
             return userData;
         });
@@ -123,11 +79,12 @@ export const update = async (req: Request, res: Response) => {
         const {username, password, gender} = req.body;
 
         const userDoc = await UserModel.findById(id);
+
         let hash = null;
         if (!bcrypt.compare(password, userDoc?._doc.passwordHash)) {
-            const salt = await bcrypt.genSalt(12);
-            hash = await bcrypt.hash(password, salt);
+            hash = await authService.generateHash(password);
         }
+
         const update = {
             email: userDoc?._doc.email,
             passwordHash: hash ? hash : userDoc?._doc.passwordHash,
@@ -135,7 +92,7 @@ export const update = async (req: Request, res: Response) => {
             gender: gender
         }
 
-        const updatedUser = await UserModel.findByIdAndUpdate({_id: id}, update);
+        const updatedUser = await userService.updateUser(id, update);
 
         res.status(200).json(
             updatedUser
@@ -152,8 +109,7 @@ export const remove = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
     
-        const userDoc = await UserModel.findByIdAndDelete(id)
-        console.log(userDoc?._doc);
+        const userDoc = await UserModel.findByIdAndDelete(id);
 
         const {passwordHash, ...userData} = userDoc?._doc;
     
