@@ -1,8 +1,7 @@
-import bcrypt from 'bcrypt';
-
 import { Request, Response } from "express";
 
 import {IUserModel, UserModel} from '../models/User.model.js';
+
 import userService from '../services/user.service.js';
 import authService from '../services/auth.service.js';
 
