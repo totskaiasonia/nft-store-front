@@ -1,19 +1,12 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-import express, { Express, Request, Response } from "express";
+import { Request, Response } from "express";
 
-import {IUser, User as UserModel} from '../models/User.js';
-
-interface RegisterRequesBody {
-    email: string;
-    password: string;
-    username: string;
-    gender: string;
-}
+import {UserModel} from '../models/User.js';
 
 
-export const register = async (req: Request<{}, {}, RegisterRequesBody>, res: Response) => {
+export const register = async (req: Request, res: Response) => {
     try {
         const {email, password, username, gender} = req.body;
 
@@ -54,7 +47,7 @@ export const register = async (req: Request<{}, {}, RegisterRequesBody>, res: Re
 
 }
 
-export const login = async (req, res) => {
+export const login = async (req: Request, res: Response) => {
     try {
         const {email, password} = req.body;
 
@@ -67,7 +60,7 @@ export const login = async (req, res) => {
 
         const token = jwt.sign(
             {
-                _id: userDoc._id,
+                _id: userDoc?._id,
             },
             process.env.JWT_PHRASE || "your secret phrase",
             {
@@ -76,7 +69,7 @@ export const login = async (req, res) => {
         );
 
 
-        const {passwordHash, ...userData} = userDoc._doc;
+        const {passwordHash, ...userData} = userDoc?._doc;
         res.status(200).json({
             token,
             ...userData
@@ -90,13 +83,13 @@ export const login = async (req, res) => {
     }
 }
 
-export const getById = async (req, res) => {
+export const getById = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
     
         const userDoc = await UserModel.findById(id);
     
-        const {passwordHash, ...userData} = userDoc._doc;
+        const {passwordHash, ...userData} = userDoc?._doc;
     
         return res.status(200).json(
             userData
@@ -108,7 +101,7 @@ export const getById = async (req, res) => {
     }
 }
 
-export const getAll = async (req, res) => {
+export const getAll = async (req: Request, res: Response) => {
     try {
         const users = await UserModel.find();
         
@@ -124,20 +117,20 @@ export const getAll = async (req, res) => {
     }
 }
 
-export const update = async (req, res) => {
+export const update = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
         const {username, password, gender} = req.body;
 
         const userDoc = await UserModel.findById(id);
-        const hash = null;
-        if (!bcrypt.compare(password, userDoc._doc.passwordHash)) {
+        let hash = null;
+        if (!bcrypt.compare(password, userDoc?._doc.passwordHash)) {
             const salt = await bcrypt.genSalt(12);
             hash = await bcrypt.hash(password, salt);
         }
         const update = {
-            email: userDoc._doc.email,
-            passwordHash: hash ? hash : userDoc._doc.passwordHash,
+            email: userDoc?._doc.email,
+            passwordHash: hash ? hash : userDoc?._doc.passwordHash,
             username: username,
             gender: gender
         }
@@ -155,14 +148,14 @@ export const update = async (req, res) => {
     }
 }
 
-export const remove = async (req, res) => {
+export const remove = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
     
         const userDoc = await UserModel.findByIdAndDelete(id)
-        console.log(userDoc._doc);
+        console.log(userDoc?._doc);
 
-        const {passwordHash, ...userData} = userDoc._doc;
+        const {passwordHash, ...userData} = userDoc?._doc;
     
         return res.status(200).json(
             userData

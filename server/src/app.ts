@@ -84,7 +84,7 @@ const app: Express = express();
 app.use(cors());
 app.use(express.json());
 // app.use(router);
-// app.use(userRouter);
+app.use(userRouter);
 // app.use(admin.options.rootPath, adminRouter);
 
 app.get('/', (req: Request, res: Response) => {
