@@ -65,8 +65,8 @@ class AuthService {
         return await bcrypt.hash(password, salt);
     }
 
-    async checkPassword(passwordOne: string, passwordTwo: string): Promise<boolean> {
-        return await bcrypt.compare(passwordOne, passwordTwo);
+    async checkPassword(password: string, passwordHash: string): Promise<boolean> {
+        return await bcrypt.compare(password, passwordHash);
     }
 }
 

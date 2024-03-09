@@ -1,14 +1,15 @@
 import express from 'express';
 
 import * as UserController from '../controllers/user.controller.js';
+import * as AuthController from '../controllers/auth.controller.js';
 
 const router = express.Router();
 
 
 router.get('/users', UserController.getAll)
 
-router.post('/auth/login', UserController.login);
-router.post('/auth/register', UserController.register);
+router.post('/auth/login', AuthController.login);
+router.post('/auth/register', AuthController.register);
 
 router.get('/users/:id', UserController.getById)
 
