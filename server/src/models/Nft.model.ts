@@ -16,10 +16,6 @@ export interface INftModel extends INft, Document {
     _doc?: any;
 }
 
-const CategorySchema = new Schema({
-    name: String
-});
-
 const NftSchema: Schema = new Schema<INft>(
     {
         name: String,
@@ -41,6 +37,3 @@ const NftSchema: Schema = new Schema<INft>(
 );
 
 export const NftModel = model<INftModel>('Nft', NftSchema);
-const CategoryModel =  model('Category', CategorySchema);
-
-//export {NftModel, CategoryModel};

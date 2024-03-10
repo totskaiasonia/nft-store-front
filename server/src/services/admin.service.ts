@@ -2,13 +2,17 @@ import AdminJS from 'adminjs';
 import MongoStore from 'connect-mongo';
 import AdminJSExpress from '@adminjs/express';
 import * as AdminJSMongoose from '@adminjs/mongoose';
-import { UserModel } from '../models/User.model.js';
+
 import mongoose from 'mongoose';
+
+import { UserModel } from '../models/User.model.js';
+import { NftModel } from '../models/Nft.model.js';
+import { CategoryModel } from '../models/Category.model.js';
 
 export class AdminService {
     private readonly DEFAULT_ADMIN;
     private readonly adminOptions = {
-        resources: [UserModel],
+        resources: [UserModel, NftModel, CategoryModel],
     };
     public readonly admin: any;
     public readonly adminRouter: any;
