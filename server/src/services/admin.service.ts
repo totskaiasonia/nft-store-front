@@ -6,10 +6,7 @@ import { UserModel } from '../models/User.model.js';
 import mongoose from 'mongoose';
 
 export class AdminService {
-    private readonly DEFAULT_ADMIN = {
-        email: 'admin@example.com',
-        password: 'password',
-    };
+    private readonly DEFAULT_ADMIN;
     private readonly adminOptions = {
         resources: [UserModel],
     };
@@ -21,7 +18,10 @@ export class AdminService {
             Resource: AdminJSMongoose.Resource,
             Database: AdminJSMongoose.Database,
         });
-
+        this.DEFAULT_ADMIN = {
+            email: 'admin@example.com',
+            password: 'password',
+        };
         const sessionStore =  MongoStore.create({
             client: mongoose.connection.getClient(),
             collectionName: "session",
@@ -30,10 +30,16 @@ export class AdminService {
             autoRemoveInterval: 1
         });
         this.admin = new AdminJS(this.adminOptions);
+        const authenticate = async (email: string, password: string) => {
+            if (email === this.DEFAULT_ADMIN.email && password === this.DEFAULT_ADMIN.password) {
+                return Promise.resolve(this.DEFAULT_ADMIN);
+            }
+            return null;
+        }
         this.adminRouter = AdminJSExpress.buildAuthenticatedRouter(
             this.admin,
             {
-                authenticate: this.authenticate,
+                authenticate,
                 cookieName: 'adminjs',
                 cookiePassword: 'sessionsecret',
             },
@@ -50,12 +56,5 @@ export class AdminService {
                 name: 'adminjs',
             }
         );
-    }
-
-    authenticate(email: string, password: string) {
-        if (email === this.DEFAULT_ADMIN.email && password === this.DEFAULT_ADMIN.password) {
-            return Promise.resolve(this.DEFAULT_ADMIN);
-        }
-        return null;
     }
 }
