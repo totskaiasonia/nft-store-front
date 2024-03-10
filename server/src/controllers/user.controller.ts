@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import {IUserModel, UserModel} from '../models/User.model.js';
+import { IUserModel } from '../models/User.model.js';
 
 import userService from '../services/user.service.js';
 import authService from '../services/auth.service.js';
@@ -46,26 +46,11 @@ export const update = async (req: Request, res: Response) => {
         const id = req.params.id;
         const {username, password, gender} = req.body;
 
-        const userDoc = await UserModel.findById(id);
-
-        let hash = null;
-        if (!(await authService.checkPassword(password, userDoc?._doc.passwordHash))) {
-            hash = await authService.generateHash(password);
-        }
-
-        const update = {
-            email: userDoc?._doc.email,
-            passwordHash: hash ? hash : userDoc?._doc.passwordHash,
-            username: username,
-            gender: gender
-        }
-
-        const updatedUser = await userService.updateUser(id, update);
+        const userData = await userService.updateUser(id, username, password, gender);
 
         res.status(200).json(
-            updatedUser
+            userData
         )
-
     } catch (error) {
         res.status(500).json({
             message: "Failed to update",
@@ -77,7 +62,7 @@ export const remove = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
     
-        const userDoc = await UserModel.findByIdAndDelete(id);
+        const userDoc = await userService.deleteUserById(id);
 
         const {passwordHash, ...userData} = userDoc?._doc;
     
