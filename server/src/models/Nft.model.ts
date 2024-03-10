@@ -1,30 +1,46 @@
-// import mongoose from 'mongoose';
+import { model, Document, Schema } from 'mongoose';
 
-// const CategorySchema = new mongoose.Schema({
-//     name: String
-// });
+export interface INft {
+    name: string;
+    description: string;
+    file: {
+        data: Buffer;
+        contentsType: string;
+    };
+    categories: [string];
+    author: string;
+    price: number;
+}
 
-// const NftSchema = new mongoose.Schema(
-//     {
-//         name: String,
-//         description: String,
-//         file: {
-//             data: Buffer,
-//             contentType: String
-//         },
-//         categories: [{
-//             type: mongoose.Schema.Types.ObjectId,
-//             ref: 'Category'
-//         }],
-//         author: String,
-//         price: Number,
-//     },
-//     {
-//         timestamp: true,
-//     }
-// );
+export interface INftModel extends INft, Document {
+    _doc?: any;
+}
 
-// const NftModel = mongoose.model('Nft', NftSchema);
-// const CategoryModel =  mongoose.model('Category', CategorySchema);
+const CategorySchema = new Schema({
+    name: String
+});
 
-// export {NftModel, CategoryModel};
+const NftSchema: Schema = new Schema<INft>(
+    {
+        name: String,
+        description: String,
+        file: {
+            data: Buffer,
+            contentType: String
+        },
+        categories: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Category'
+        }],
+        author: String,
+        price: Number,
+    },
+    {
+        timestamps: true,
+    }
+);
+
+export const NftModel = model<INftModel>('Nft', NftSchema);
+const CategoryModel =  model('Category', CategorySchema);
+
+//export {NftModel, CategoryModel};
