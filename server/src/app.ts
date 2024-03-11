@@ -8,6 +8,7 @@ import cors from 'cors';
 
 import userRouter from './routers/userRouter.js';
 import categoryRouter from './routers/categoryRouter.js';
+import nftRouter from './routers/nftRouter.js';
 
 import { AdminService } from './services/admin.service.js';
 
@@ -28,6 +29,7 @@ app.use(express.json());
 
 app.use(userRouter);
 app.use(categoryRouter);
+app.use(nftRouter);
 
 app.use(adminPanel.admin.options.rootPath, adminPanel.adminRouter);
 

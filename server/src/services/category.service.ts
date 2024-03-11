@@ -10,8 +10,8 @@ class categoryService {
         return await CategoryModel.find();
     }
 
-    async findByName(categoryData: Partial<ICategory>): Promise<ICategoryModel[] | null> {
-        return await CategoryModel.find({name: categoryData.name});
+    async findByName(name: string): Promise<ICategoryModel | null> {
+        return await CategoryModel.findOne({name});
     }
 
     async unpdateCategory(id: string, categoryData: Partial<ICategory>) {

@@ -1,4 +1,4 @@
-import { model, Document, Schema } from 'mongoose';
+import { model, Types, Document, Schema } from 'mongoose';
 
 export interface INft {
     name: string;
@@ -7,7 +7,7 @@ export interface INft {
         data: Buffer;
         contentsType: string;
     };
-    categories: [string];
+    categories: Types.ObjectId[];
     author: string;
     price: number;
 }
@@ -22,7 +22,7 @@ const NftSchema: Schema = new Schema<INft>(
         description: String,
         file: {
             data: Buffer,
-            contentType: String
+            contentsType: String
         },
         categories: [{
             type: Schema.Types.ObjectId,

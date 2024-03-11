@@ -23,7 +23,7 @@ export const getByName = async (req: Request, res: Response) => {
     try {
         const name = req.params.name;
 
-        const categoryData = await categoryService.findByName({name});
+        const categoryData = await categoryService.findByName(name);
 
         res.status(200).json(
             categoryData
