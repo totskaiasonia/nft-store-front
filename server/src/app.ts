@@ -7,6 +7,7 @@ import express, { Express } from "express";
 import cors from 'cors';
 
 import userRouter from './routers/userRouter.js';
+import categoryRouter from './routers/categoryRouter.js';
 
 import { AdminService } from './services/admin.service.js';
 
@@ -24,7 +25,10 @@ const app: Express = express();
 
 app.use(cors());
 app.use(express.json());
+
 app.use(userRouter);
+app.use(categoryRouter);
+
 app.use(adminPanel.admin.options.rootPath, adminPanel.adminRouter);
 
 app.listen(process.env.PORT || PORT, () => {
