@@ -3,6 +3,7 @@ import nftService from "../services/nft.service.js";
 
 export const create = async (req: Request, res: Response) => {
     try {
+        console.log(req.file);
         const {name, description, categories, author, price} = JSON.parse(req.body.nftData);
         const fileBuffer = req.file?.buffer;
         const fileMime = req.file?.mimetype;
