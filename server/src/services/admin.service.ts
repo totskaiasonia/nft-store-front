@@ -26,7 +26,8 @@ export class AdminService {
             email: 'admin@example.com',
             password: 'password',
         };
-        const sessionStore =  MongoStore.create({
+        const sessionStore = MongoStore.create({
+            // @ts-ignore TS2322
             client: mongoose.connection.getClient(),
             collectionName: "session",
             stringify: false,
