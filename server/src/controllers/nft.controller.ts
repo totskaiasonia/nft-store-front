@@ -3,21 +3,15 @@ import nftService from "../services/nft.service.js";
 
 export const create = async (req: Request, res: Response) => {
     try {
-        console.log(req.file);
         const {name, description, categories, author, price} = JSON.parse(req.body.nftData);
-        const fileBuffer = req.file?.buffer;
-        const fileMime = req.file?.mimetype;
 
-        if (!fileBuffer || !fileMime)
+        if (!req.file)
             return res.status(400).json({message: "Empty file"});
 
         const nftData = await nftService.createNft({
             name,
             description,
-            file: {
-                data: fileBuffer,
-                contentsType: fileMime,
-            },
+            fileId: (req as any).file.id,
             author,
             price
         }, categories);

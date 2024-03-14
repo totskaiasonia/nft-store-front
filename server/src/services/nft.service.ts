@@ -1,4 +1,3 @@
-import mongoose from 'mongoose';
 import {INft, INftModel, NftModel} from '../models/Nft.model.js';
 import categoryService from './category.service.js';
 

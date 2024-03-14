@@ -9,7 +9,6 @@ import path from 'path';
 import * as NftController from '../controllers/nft.controller.js';
 import multer from 'multer';
 import { GridFsStorage } from 'multer-gridfs-storage';
-import Grid from 'gridfs-stream';
 
 
 const router = express.Router();
