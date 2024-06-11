@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import mongoose from 'mongoose';
 import express, { Express } from "express";
 
 import cors from 'cors';
@@ -12,23 +11,11 @@ import nftRouter from './routers/nftRouter.js';
 
 import { AdminService } from './services/admin.service.js';
 
-import Grid from 'gridfs-stream';
+import './db/index.js';
+
 
 
 const PORT = process.env.PORT || 3000;
-
-let gfs;
-mongoose
-    .connect(process.env.DATABASE_URL || "")
-    .then(() => console.log("DB connected"))
-    .catch((err) => console.log("DB error", err));
-
-const conn = mongoose.connection;
-
-conn.once('open', () => {
-    gfs = Grid(conn.db, mongoose.mongo);
-    gfs.collection('uploads');
-})
 
 const adminPanel: AdminService = new AdminService();
 

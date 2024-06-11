@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import nftService from "../services/nft.service.js";
+import { gfs } from "../db/index.js";
 
 export const create = async (req: Request, res: Response) => {
     try {
@@ -30,9 +31,13 @@ export const create = async (req: Request, res: Response) => {
 export const getAll = async (req: Request, res: Response) => {
     try {
         const nfts = await nftService.findAllNfts();
-        res.status(200).json(
-            nfts
-        );
+        gfs.files.find().toArray((err: any, files: any) => {
+            console.log(files);
+            return res.status(200).json(files);
+        });
+        // res.status(200).json(
+        //     nfts
+        // );
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -45,10 +50,12 @@ export const getByid = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
         const nftData = await nftService.findNftById(id);
-
-        res.status(200).json(
-            nftData
-        );
+        gfs.find().toArray((err: any, files: any) => {
+            res.status(200).json({
+                nftData,
+                files
+        });
+        })
     } catch (error) {
         console.log(error);
         res.status(500).json({

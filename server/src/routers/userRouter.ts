@@ -1,9 +1,9 @@
-import express from 'express';
+import express, { Router } from 'express';
 
 import * as UserController from '../controllers/user.controller.js';
 import * as AuthController from '../controllers/auth.controller.js';
 
-const router = express.Router();
+const router: Router = express.Router();
 
 
 router.get('/users', UserController.getAll)
