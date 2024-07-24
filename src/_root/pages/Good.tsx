@@ -8,29 +8,36 @@ import { FaArrowDown } from "react-icons/fa6";
 
 import styles from './Good.module.css';
 
-import nftImg from '../../assets/nft-sample.jpg';
 import avaImg from '../../assets/authorAva.jpg';
 import ethImg from '../../assets/eth-icon.svg';
 
 import CategoryLabel from "../../components/CategoryLabel";
+import { useLocation, useParams } from "react-router-dom";
+
+import nfts from "../../data/nfts";
 
 const Good = () => {
+    const {nftId} = useParams<{ nftId: string }>();
+    const location = useLocation();
+    const { category } = location.state;
+
+    const productIndex = parseInt(nftId || '', 10);
   return (
     <div className={`layout`}>
         <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '100px'}}>
-            <Link underline="hover" color="inherit" href="/store">
+            <Link underline="hover" color="inherit" href="/store/all">
                 store
             </Link>
-            <Link underline="hover" color="inherit" href="/store/modern">
-                modern
+            <Link underline="hover" color="inherit" href={`/store/${category}`}>
+                {category}
             </Link>
-            <Typography color="text.primary">flasking pinky fluids</Typography>
+            <Typography color="text.primary">{nfts[productIndex].name.toLowerCase()}</Typography>
         </Breadcrumbs>
         <div className={styles.goodWrapper}>
-            <img className={styles.goodImg} src={nftImg} alt=""/>
+            <img className={styles.goodImg} src={nfts[productIndex].image} alt=""/>
             <div className={styles.goodInfo}>
                 <div className={styles.mainInfo}>
-                    <h1>Flasking pinky fluids</h1>
+                    <h1>{nfts[productIndex].name}</h1>
                     <div className={styles.mainInfo_author}>
                         <p>Tom Smith</p>
                         <img src={avaImg} alt="" />
@@ -39,20 +46,21 @@ const Good = () => {
                 <div className={styles.goodAccessory}>
                     <div className={styles.goodAccessory_collection}>
                         <IoLayers color="black" size={25}/>
-                        <p>fluids</p>
+                        <p>{nfts[productIndex].collection}</p>
                     </div>
                     <Divider orientation="vertical" flexItem/>
                     <div className={styles.goodAccessory_categories}>
-                        <div style={{margin: '0 10px 0 20px'}}>
-                            <CategoryLabel category="modern" color='#FFECCF'/>
-                        </div>
-                        <div style={{marginRight: '10px'}}>
-                            <CategoryLabel category="art" color='#E7CFFF'/>
-                        </div>
+                        {
+                            nfts[productIndex].categories.map(item => (
+                                <div className={styles.categoryLabelWrapper}>
+                                    <CategoryLabel category={item} color='#E7CFFF'/>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className={styles.maxPrice}>
-                    <p>12.5</p>
+                    <p>{nfts[productIndex].price}</p>
                     <img src={ethImg} alt="" />
                 </div>
                 <div className={styles.makeBid}>

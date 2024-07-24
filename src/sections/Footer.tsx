@@ -16,7 +16,7 @@ const Footer = () => {
             <h4>Navigation</h4>
             <div>
               <a className={styles.navItem} href="/">home</a>
-              <a className={styles.navItem} href="/store">store</a>
+              <a className={styles.navItem} href="/store/all">store</a>
               <a className={styles.navItem}>contacts</a>
             </div>
           </div>

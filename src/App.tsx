@@ -23,8 +23,8 @@ function App() {
 
           <Route element={<RootLayout/>}>
             <Route index element={<Home/>} />
-            <Route path='/store' element={<Store/>}/>
-            <Route path='/store/:nftId' element={<Good/>}/>
+            <Route path='/store/:category' element={<Store/>}/>
+            <Route path='/goods/:nftId' element={<Good/>}/>
           </Route>
         </Routes>
       </main>

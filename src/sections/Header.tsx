@@ -15,7 +15,7 @@ const Header = () => {
           </button>
           <div className={styles.nav}>
             <a className={styles.navItem} href="/">home</a>
-            <a className={styles.navItem} href="/store">store</a>
+            <a className={styles.navItem} href="/store/all">store</a>
             <a className={styles.navItem}>contacts</a>
           </div>
           <div>

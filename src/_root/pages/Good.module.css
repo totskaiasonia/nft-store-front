@@ -130,3 +130,10 @@
     font-size: 14px;
     margin-top: 30px;
 }
+
+.categoryLabelWrapper:first-child {
+    margin: 0 10px 0 20px;
+}
+.categoryLabelWrapper {
+    margin: 0 10px 0 0;
+}
