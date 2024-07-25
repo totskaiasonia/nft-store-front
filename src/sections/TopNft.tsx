@@ -9,16 +9,13 @@ import styles from   './TopNft.module.css';
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
 
+import nfts from '../data/nfts';
+
 const TopNft = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [centerSlideIndex, setCenterSlideIndex] = useState(0);
-  const [cards, setCards] = useState([
-    {name: 'aaa'},
-    {name: 'bbb'},
-    {name: 'ccc'},
-    {name: 'ddd'},
-    {name: 'eee'},
-  ])
+  const randIndex = Math.floor(Math.random() * 20);
+  const [cards, setCards] = useState(nfts.slice(randIndex, randIndex+5))
 
   let settings = {
     className: styles.nftCardsWrapper,
@@ -28,7 +25,7 @@ const TopNft = () => {
     speed: 400,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 4000,
     nextArrow: <FaAngleRight color='black'/>,
     prevArrow: <FaAngleLeft color='black'/>
@@ -49,7 +46,6 @@ const TopNft = () => {
 
   const handleAfterChange = (index: number) => {
     setCenterSlideIndex(index);
-    console.log(centerSlideIndex);
   };
 
   return (
@@ -59,11 +55,11 @@ const TopNft = () => {
           <Slider {...settings} afterChange={handleAfterChange}>
             {
               cards.map((item, index) => (
-                  index == centerSlideIndex
-                  ?
-                    <TopNftCard isActive={true}/>
-                  :
-                    <TopNftCard isActive={false}/>
+                    <TopNftCard isActive={index == centerSlideIndex}
+                      author={item.author}
+                      image={item.image}
+                      price={item.price}
+                    />
               ))
             }
           </Slider>
