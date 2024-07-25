@@ -36,7 +36,7 @@ const TopNftCard = (props: PropsType) => {
                 </div>
                 <div className={styles.cardInfoItem}>
                   <p>Final price:</p>
-                  <p>{props.price}</p>
+                  <p>{props.price} eth</p>
                 </div>
               </div>
             </div>
