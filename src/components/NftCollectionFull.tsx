@@ -1,9 +1,9 @@
 import styles from './NftCollectionFull.module.css';
 
-import borderApe1 from '../assets/bored-ape-1.png';
-import borderApe2 from '../assets/bored-ape-2.png';
-import borderApe3 from '../assets/bored-ape-3.png';
-import borderApe4 from '../assets/bored-ape-4.png';
+import borderApe1 from '../assets/nft-image-34.png';
+import borderApe2 from '../assets/nft-image-35.png';
+import borderApe3 from '../assets/nft-image-36.png';
+import borderApe4 from '../assets/nft-image-2.png';
 
 import girlAvatar from '../assets/girl-avatar.svg';
 

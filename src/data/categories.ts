@@ -23,6 +23,14 @@ const categories = [
         name: 'neon',
         href: '/store/neon'
     },
+    {
+        name: 'animated',
+        href: '/store/animated'
+    },
+    {
+        name: 'glitch',
+        href: '/store/glitch'
+    },
 ];
 
 export default categories;

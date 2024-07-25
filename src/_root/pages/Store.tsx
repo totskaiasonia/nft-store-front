@@ -15,9 +15,45 @@ import MyPagination from '../../components/ui/MyPagination';
 import MySlider from '../../components/ui/MySlider';
 
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { useEffect, useState } from 'react';
+
+import nfts from "../../data/nfts";
 
 const Store = () => {
+  const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
+  const [selectedCollections, setSelectedCollections] = useState<string[]>([]);
+  const [filteredData, setFilteredData] = useState(nfts);
+
   const {category} = useParams();
+
+  const handleAuthorCheckboxChange = (event: any, author: string) => {
+    if (event?.target.checked) {
+      setSelectedAuthors([...selectedAuthors, author]);
+    }
+    else {
+      setSelectedAuthors((prevSelectedAuthors) =>
+        prevSelectedAuthors.filter((item: string) => item !== author)
+      );
+    }
+  };
+  const handleCollectionCheckboxChange = (event: any, collection: string) => {
+    if (event?.target.checked) {
+      setSelectedCollections([...selectedCollections, collection]);
+    }
+    else {
+      setSelectedCollections((prevSelectedCollections) =>
+        prevSelectedCollections.filter((item: string) => item !== collection)
+      );
+    }
+  };
+
+  useEffect(() => {
+    if (selectedAuthors.length === 0) {
+      setFilteredData(nfts); // Возвращаем все данные, если нет выбранных фильтров
+    } else {
+      setFilteredData(nfts.filter((item) => selectedAuthors.includes(item.author)));
+    }
+  }, [selectedAuthors]);
   return (
     <div className="layout">
       <div className={styles.storeWrapper}>
@@ -54,8 +90,9 @@ const Store = () => {
               {
                 authors.map(item => (
                   <FormControlLabel
+                    key={item.name}
                     control={
-                      <MyCheckbox style={{marginRight: '10px'}}/>
+                      <MyCheckbox style={{marginRight: '10px'}} onChange={(e) => handleAuthorCheckboxChange(e, item.name)}/>
                     }
                     label={item.name}
                   />
@@ -65,8 +102,9 @@ const Store = () => {
               {
                 collections.map(item => (
                   <FormControlLabel
+                    key={item.name}
                     control={
-                      <MyCheckbox style={{marginRight: '10px'}}/>
+                      <MyCheckbox style={{marginRight: '10px'}} onChange={(e) => handleCollectionCheckboxChange(e, item.name)}/>
                     }
                     label={item.name}
                   />
@@ -83,7 +121,7 @@ const Store = () => {
             <Typography color="text.primary">{category}</Typography>
           </Breadcrumbs>
           <h1 style={{textTransform: 'capitalize'}}>{category}</h1>
-          <NftCardContainer category={category as string}/>
+          <NftCardContainer category={category as string} data={filteredData}/>
           <MyPagination count={10} style={{marginTop: '50px'}}/>
         </div>
       </div>

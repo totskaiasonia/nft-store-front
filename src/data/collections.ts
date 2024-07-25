@@ -1,6 +1,6 @@
 const collections = [
     {
-        name: "fluids",
+        name: "Fluids",
     },
     {
         name: "Crypto Creatures",
@@ -13,6 +13,18 @@ const collections = [
     },
     {
         name: "Cyber Artifacts",
+    },
+    {
+        name: "Pixel gigies",
+    },
+    {
+        name: "Changing era CL",
+    },
+    {
+        name: "Globals",
+    },
+    {
+        name: "Modernized art",
     },
 ]
 

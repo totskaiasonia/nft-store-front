@@ -1,17 +1,16 @@
 import NftCard from "./NftCard";
 import styles from './NftCardContainer.module.css';
 
-import nfts from "../data/nfts";
-
 interface NftCardContainerProps {
   category: string;
+  data: any[];
 }
 
 const NftCardContainer = (props: NftCardContainerProps) => {
   return (
     <div className={styles.nftCardsWrapper}>
       {
-        nfts.map((item, index) => (
+        props.data.map((item, index) => (
           <NftCard 
             key={index}
             index={index}
