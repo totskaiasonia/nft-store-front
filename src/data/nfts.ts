@@ -42,6 +42,7 @@ import nft41 from '../assets/nft-image-41.jpg';
 
 const nfts = [
     {
+        id: 0,
         name: "Flasking fluid outsider",
         author: "Gilad Gray",
         image: nft1,
@@ -57,6 +58,7 @@ const nfts = [
         categories: ['modern', 'art']
     },
     {
+        id: 1,
         name: "Birthday ape",
         author: "Tom Smith",
         image: nft2,
@@ -72,6 +74,7 @@ const nfts = [
         categories: ['modern', 'art']
     },
     {
+        id: 2,
         name: "Evil dark ape",
         author: "Tom Smith",
         image: nft3,
@@ -87,6 +90,7 @@ const nfts = [
         categories: ['modern', 'gaming']
     },
     {
+        id: 3,
         name: "Gaming T-rex",
         author: "Sam Whiten",
         image: nft4,
@@ -102,6 +106,7 @@ const nfts = [
         categories: ['pixel', 'gaming']
     },
     {
+        id: 4,
         name: "Rich boy not whale",
         author: "Sam Whiten",
         image: nft5,
@@ -117,6 +122,7 @@ const nfts = [
         categories: ['pixel', 'gaming']
     },
     {
+        id: 5,
         name: "Gaming girl",
         author: "Sam Whiten",
         image: nft6,
@@ -132,6 +138,7 @@ const nfts = [
         categories: ['gaming', '3D']
     },
     {
+        id: 6,
         name: "Digital cyber guy",
         author: "Sam Whiten",
         image: nft7,
@@ -147,6 +154,7 @@ const nfts = [
         categories: ['gaming', '3D']
     },
     {
+        id: 7,
         name: "Pink lord",
         author: "Gilad Gray",
         image: nft8,
@@ -162,6 +170,7 @@ const nfts = [
         categories: ['art', 'modern', '3D']
     },
     {
+        id: 8,
         name: "Neon ape",
         author: "Tom Smith",
         image: nft9,
@@ -177,6 +186,7 @@ const nfts = [
         categories: ['neon', 'art']
     },
     {
+        id: 9,
         name: "Party ape #23",
         author: "Tom Smith",
         image: nft10,
@@ -192,6 +202,7 @@ const nfts = [
         categories: ['art']
     },
     {
+        id: 10,
         name: "Discovering",
         author: "Emma Timson",
         image: nft11,
@@ -207,6 +218,7 @@ const nfts = [
         categories: ['animated', 'pixel']
     },
     {
+        id: 11,
         name: "Traveling",
         author: "Emma Timson",
         image: nft12,
@@ -222,6 +234,7 @@ const nfts = [
         categories: ['animated', 'pixel']
     },
     {
+        id: 12,
         name: "Depressed city",
         author: "Emma Timson",
         image: nft13,
@@ -237,6 +250,7 @@ const nfts = [
         categories: ['animated', 'pixel']
     },
     {
+        id: 13,
         name: "Pinky aliens",
         author: "Emma Timson",
         image: nft14,
@@ -252,6 +266,7 @@ const nfts = [
         categories: ['animated', 'pixel']
     },
     {
+        id: 14,
         name: "Shik Shok",
         author: "Kenny Loris",
         image: nft15,
@@ -267,6 +282,7 @@ const nfts = [
         categories: ['glitch', 'pixel']
     },
     {
+        id: 15,
         name: "Burning tears",
         author: "Kenny Loris",
         image: nft16,
@@ -282,6 +298,7 @@ const nfts = [
         categories: ['animated', 'pixel']
     },
     {
+        id: 16,
         name: "Rounding around #2",
         author: "Kenny Loris",
         image: nft17,
@@ -297,6 +314,7 @@ const nfts = [
         categories: ['animated']
     },
     {
+        id: 17,
         name: "Rounding around #3",
         author: "Kenny Loris",
         image: nft18,
@@ -312,6 +330,7 @@ const nfts = [
         categories: ['animated', 'art']
     },
     {
+        id: 18,
         name: "Rounding around#1",
         author: "Kenny Loris",
         image: nft19,
@@ -327,6 +346,7 @@ const nfts = [
         categories: ['glitch', 'pixel', 'art']
     },
     {
+        id: 19,
         name: "Modernized tao",
         author: "Luka Shorman",
         image: nft20,
@@ -342,6 +362,7 @@ const nfts = [
         categories: ['animated', 'art', 'modern']
     },
     {
+        id: 20,
         name: "IT panik",
         author: "Luka Shorman",
         image: nft21,
@@ -357,6 +378,7 @@ const nfts = [
         categories: ['glitch', 'animated']
     },
     {
+        id: 21,
         name: "Run away",
         author: "Emma Timson",
         image: nft22,
@@ -372,6 +394,7 @@ const nfts = [
         categories: ['modern', 'animated']
     },
     {
+        id: 22,
         name: "Stay",
         author: "Emma Timson",
         image: nft23,
@@ -387,6 +410,7 @@ const nfts = [
         categories: ['modern', 'art', 'pixel', 'animated']
     },
     {
+        id: 23,
         name: "Stay #4",
         author: "Emma Timson",
         image: nft24,
@@ -402,6 +426,7 @@ const nfts = [
         categories: ['art', 'pixel', 'animated']
     },
     {
+        id: 24,
         name: "Stay #4",
         author: "Emma Timson",
         image: nft25,

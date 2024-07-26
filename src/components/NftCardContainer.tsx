@@ -10,10 +10,10 @@ const NftCardContainer = (props: NftCardContainerProps) => {
   return (
     <div className={styles.nftCardsWrapper}>
       {
-        props.data.map((item, index) => (
+        props.data.map((item) => (
           <NftCard 
-            key={index}
-            index={index}
+            key={item.id}
+            id={item.id}
             nftImage={item.image} 
             amountLeft={item.amountLeft}
             totalAmount={item.totalAmount}

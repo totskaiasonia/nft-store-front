@@ -4,7 +4,7 @@ import eth from '../assets/eth-icon.svg';
 import { useNavigate } from 'react-router-dom';
 
 interface NftCardProps {
-  index: number;
+  id: number;
   nftImage: string;
   amountLeft: number;
   totalAmount: number;
@@ -20,7 +20,7 @@ interface NftCardProps {
 const NftCard = (props: NftCardProps) => {
   const navigate = useNavigate();
   return (
-    <div className={styles.nftCardWrapper} onClick={() => navigate(`/goods/${props.index}`, {state: {category: props.category}})}>
+    <div className={styles.nftCardWrapper} onClick={() => navigate(`/goods/${props.id}`, {state: {category: props.category}})}>
         <img src={props.nftImage}/>
         <p className={styles.amount}>{props.amountLeft} of {props.totalAmount}</p>
         <h3><img src={eth} alt="" />{props.price} Eth</h3>

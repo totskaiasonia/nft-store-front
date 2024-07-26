@@ -1,6 +1,7 @@
 import styles from './Store.module.css';
 import { useParams } from 'react-router-dom';
 
+import nfts from "../../data/nfts";
 import categories from '../../data/categories';
 import authors from '../../data/authors';
 import collections from '../../data/collections';
@@ -17,11 +18,13 @@ import MySlider from '../../components/ui/MySlider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { useEffect, useState } from 'react';
 
-import nfts from "../../data/nfts";
 
 const Store = () => {
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
   const [selectedCollections, setSelectedCollections] = useState<string[]>([]);
+
+  const [filteredCollections, setFilteredCollections] = useState(collections.map(item => item.name))
+  
   const [filteredData, setFilteredData] = useState(nfts);
 
   const {category} = useParams();
@@ -48,23 +51,61 @@ const Store = () => {
   };
 
   useEffect(() => {
-    if (selectedAuthors.length === 0) {
-      setFilteredData(nfts); // Возвращаем все данные, если нет выбранных фильтров
-    } else {
-      setFilteredData(nfts.filter((item) => selectedAuthors.includes(item.author)));
+    if (selectedAuthors.length === 0 && selectedCollections.length === 0) {
+      if (category === "all")
+        setFilteredData(nfts);
+      else
+        setFilteredData(nfts.filter(item => item.categories.includes(category as string)))
+      setFilteredCollections(collections.map(item => item.name));
     }
-  }, [selectedAuthors]);
+    else if (selectedAuthors.length === 0) {
+      setFilteredData(nfts.filter(item => selectedCollections.includes(item.collection)));
+    }
+    else if (selectedCollections.length === 0) {
+      const arr: any[] = []
+      nfts.forEach(item => {
+        if (selectedAuthors.includes(item.author) && !arr.includes(item.collection)) arr.push(item.collection)
+      });
+      console.log(arr);
+      setFilteredCollections(arr); // Возвращаем все данные, если нет выбранных фильтров
+      if (category === "all")
+        setFilteredData(nfts.filter(item => selectedAuthors.includes(item.author)));
+      else
+      setFilteredData(nfts.filter(item => selectedAuthors.includes(item.author) && item.categories.includes(category as string)));
+    }
+    else {
+      const arr: any[] = []
+      nfts.forEach(item => {
+        if (selectedAuthors.includes(item.author) && !arr.includes(item.collection)) arr.push(item.collection)
+      });
+      console.log(arr);
+      setFilteredCollections(arr); // Возвращаем все данные, если нет выбранных фильтров
+      if (category === "all")
+        setFilteredData(nfts.filter((item) => selectedAuthors.includes(item.author) && selectedCollections.includes(item.collection)));
+      else
+      setFilteredData(nfts.filter((item) => selectedAuthors.includes(item.author) && selectedCollections.includes(item.collection) && item.categories.includes(category as string)));
+    }
+  }, [selectedAuthors, selectedCollections]);
+
+  useEffect(() => {
+    console.log(category);
+    if (category === "all")
+      setFilteredData(nfts);
+    else
+      setFilteredData(nfts.filter(item => item.categories.includes(category as string)))
+  }, [category]); 
   return (
     <div className="layout">
       <div className={styles.storeWrapper}>
         <div className={styles.storePreferences}>
-          <Category key="root" isActive={category === "all"} categoryName='All' href='/store/all'/>
+          <Category key="all" isActive={category === "all"} categoryName='All' href='/store/all'/>
           {
             categories.map((item) => (
               <Category key={item.name} isActive={category === item.name} categoryName={item.name} href={item.href}/>
             ))
           }
           <div className={styles.filters}>
+
             <div style={{width: '200px'}}>
               <p>Year</p>
               <MySlider 
@@ -100,14 +141,17 @@ const Store = () => {
               }
               <p>Collection</p>
               {
-                collections.map(item => (
+                filteredCollections.map(item => (
+                  <>
                   <FormControlLabel
-                    key={item.name}
+                    key={item}
                     control={
-                      <MyCheckbox style={{marginRight: '10px'}} onChange={(e) => handleCollectionCheckboxChange(e, item.name)}/>
+                      <MyCheckbox style={{marginRight: '10px'}} onChange={(e) => handleCollectionCheckboxChange(e, item)}/>
                     }
-                    label={item.name}
+                    label={item}
                   />
+                  <br/>
+                  </>
                 ))
               }
             </div>

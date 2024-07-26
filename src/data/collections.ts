@@ -24,6 +24,9 @@ const collections = [
         name: "Globals",
     },
     {
+        name: "Plains",
+    },
+    {
         name: "Modernized art",
     },
 ]

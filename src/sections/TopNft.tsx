@@ -25,7 +25,7 @@ const TopNft = () => {
     speed: 400,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 4000,
     nextArrow: <FaAngleRight color='black'/>,
     prevArrow: <FaAngleLeft color='black'/>
@@ -56,6 +56,7 @@ const TopNft = () => {
             {
               cards.map((item, index) => (
                     <TopNftCard isActive={index == centerSlideIndex}
+                      key={item.id}
                       author={item.author}
                       image={item.image}
                       price={item.price}
