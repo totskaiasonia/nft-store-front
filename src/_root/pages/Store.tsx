@@ -19,15 +19,30 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import { useEffect, useState } from 'react';
 
 
+
+
+const itemsPerPage = 16;
+
 const Store = () => {
+  const [filteredData, setFilteredData] = useState(nfts);
+  const [filteredCollections, setFilteredCollections] = useState(collections.map(item => item.name))
+
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
   const [selectedCollections, setSelectedCollections] = useState<string[]>([]);
+  const [activePage, setActivePage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(filteredData.length > 16 ? 16 : filteredData.length);
 
-  const [filteredCollections, setFilteredCollections] = useState(collections.map(item => item.name))
   
-  const [filteredData, setFilteredData] = useState(nfts);
 
   const {category} = useParams();
+
+
+
+  const handlePaginationChange = (event: any, value: any) => {
+    setActivePage(value - 1);
+};
+  
+  
 
   const handleAuthorCheckboxChange = (event: any, author: string) => {
     if (event?.target.checked) {
@@ -93,7 +108,12 @@ const Store = () => {
       setFilteredData(nfts);
     else
       setFilteredData(nfts.filter(item => item.categories.includes(category as string)))
-  }, [category]); 
+  }, [category]);
+
+  useEffect(() => {
+    setActivePage(0);
+    setItemsPerPage(filteredData.length > 16 ? 16 : filteredData.length);
+  }, [filteredData]);
   return (
     <div className="layout">
       <div className={styles.storeWrapper}>
@@ -165,8 +185,8 @@ const Store = () => {
             <Typography color="text.primary">{category}</Typography>
           </Breadcrumbs>
           <h1 style={{textTransform: 'capitalize'}}>{category}</h1>
-          <NftCardContainer category={category as string} data={filteredData}/>
-          <MyPagination count={10} style={{marginTop: '50px'}}/>
+          <NftCardContainer category={category as string} data={filteredData.slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage)}/>
+          <MyPagination style={{marginTop: '50px'}} count={Math.ceil(filteredData.length/itemsPerPage)} page={activePage + 1} onChange={handlePaginationChange}/>
         </div>
       </div>
     </div>
