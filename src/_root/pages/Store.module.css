@@ -1,6 +1,7 @@
 .storeWrapper {
     margin: 0 0 50px;
     display: flex;
+    column-gap: 24px;
 }
 .storePreferences {
     margin-top: 130px;

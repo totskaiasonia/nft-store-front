@@ -14,7 +14,7 @@ const NftCollectionMin = (props: NftCollectionMinProps) => {
     <div className={styles.nftCollectionMin}>
       {
         filteredNfts.map((item: any) => (
-          <img src={item.image} alt="" />
+          <img key={item.id} src={item.image} alt="" />
         ))
       }
     </div>

@@ -29,6 +29,12 @@ const collections = [
     {
         name: "Modernized art",
     },
+    {
+        name: "Run or stay",
+    },
+    {
+        name: "ModernizM",
+    },
 ]
 
 export default collections;

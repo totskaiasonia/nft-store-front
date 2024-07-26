@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import NftCollectionMin from './NftCollectionMin';
 import styles from './NftCollectionMinContainer.module.css';
 
@@ -6,11 +7,14 @@ interface NftCollectionMinContainerProps {
 }
 
 const NftCollectionMinContainer = (props: NftCollectionMinContainerProps) => {
+  useEffect(() => {
+    console.log(props.collectionNames);
+  }, [])
   return (
     <div className={styles.nftCollectionsWrapper}>
       {
         props.collectionNames.map(item => (
-          <div className={styles.nftCollectionMinWrapper}>
+          <div key={item} className={styles.nftCollectionMinWrapper}>
             <NftCollectionMin collectionName={item}/>
           </div>
         ))

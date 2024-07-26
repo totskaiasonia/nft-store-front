@@ -7,7 +7,10 @@ import Wave from 'react-wavify';
 const popularCollectionsNames = [
     'Crypto Creatures',
     'Pixel gigies',
-]
+    'Run or stay',
+    'ModernizM',
+    'Plains'
+];
 
 const PupularCollections = () => {
 
@@ -42,7 +45,7 @@ const PupularCollections = () => {
                             <NftCollectionFull collectionName={popularCollectionsNames[0]}/>
                         </div>
                         <div className={styles.minCollectionsWrapper}>
-                            <NftCollectionMinContainer collectionNames={[popularCollectionsNames[1], popularCollectionsNames[1], popularCollectionsNames[1], popularCollectionsNames[1]]}/>
+                            <NftCollectionMinContainer collectionNames={popularCollectionsNames.slice(1, 5)}/>
                         </div>
                     </div>
                 </div>

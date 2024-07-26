@@ -39,6 +39,7 @@ import nft38 from '../assets/nft-image-38.jpg';
 import nft39 from '../assets/nft-image-39.webp';
 import nft40 from '../assets/nft-image-40.jpg';
 import nft41 from '../assets/nft-image-41.jpg';
+import nft42 from '../assets/nft-image-42.gif';
 
 const nfts = [
     {
@@ -440,6 +441,86 @@ const nfts = [
         totalAmount: 30,
         collection: "Run or stay",
         categories: ['art', 'pixel', 'animated']
+    },
+    {
+        id: 37,
+        name: "Topper pumpkey #1",
+        author: "Edward Unknown",
+        image: nft38,
+        price: 23.31,
+        timeLeft: {
+            h: 0,
+            m: 4,
+            s: 53
+        },
+        amountLeft: 2,
+        totalAmount: 5,
+        collection: "ModernizM",
+        categories: ['art', 'modern']
+    },
+    {
+        id: 38,
+        name: "Topper pumpkey #2",
+        author: "Edward Unknown",
+        image: nft39,
+        price: 3.15,
+        timeLeft: {
+            h: 3,
+            m: 1,
+            s: 32
+        },
+        amountLeft: 4,
+        totalAmount: 10,
+        collection: "ModernizM",
+        categories: ['art', 'modern']
+    },
+    {
+        id: 39,
+        name: "Topper pumpkey #3",
+        author: "Edward Unknown",
+        image: nft40,
+        price: 3.15,
+        timeLeft: {
+            h: 11,
+            m: 31,
+            s: 0
+        },
+        amountLeft: 15,
+        totalAmount: 20,
+        collection: "ModernizM",
+        categories: ['art', 'modern']
+    },
+    {
+        id: 40,
+        name: "Topper pumpkey #4",
+        author: "Edward Unknown",
+        image: nft41,
+        price: 3.15,
+        timeLeft: {
+            h: 12,
+            m: 11,
+            s: 32
+        },
+        amountLeft: 12,
+        totalAmount: 20,
+        collection: "ModernizM",
+        categories: ['art', 'modern']
+    },
+    {
+        id: 41,
+        name: "Rounding around #4",
+        author: "Kenny Loris",
+        image: nft42,
+        price: 0.44,
+        timeLeft: {
+            h: 23,
+            m: 32,
+            s: 59
+        },
+        amountLeft: 16,
+        totalAmount: 20,
+        collection: "Plains",
+        categories: ['animated', 'art']
     },
 ];
 

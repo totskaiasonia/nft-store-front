@@ -19,7 +19,7 @@ const NftCollectionFull = (props: NftCollectionFullProps) => {
         <div className={styles.collectionImgsWrapper}>
             {
             filteredNfts.map((item: any) => (
-              <img src={item.image} alt='top collection nft'/>
+              <img key={item.id} src={item.image} alt='top collection nft'/>
             ))
           }
         </div>

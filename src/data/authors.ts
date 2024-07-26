@@ -17,6 +17,9 @@ const authors = [
     {
         name: "Luka Shorman"
     },
+    {
+        name: "Edward Unknown"
+    },
 ]
 
 export default authors;
