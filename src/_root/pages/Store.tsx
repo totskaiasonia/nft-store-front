@@ -114,6 +114,10 @@ const Store = () => {
     setActivePage(0);
     setItemsPerPage(filteredData.length > 16 ? 16 : filteredData.length);
   }, [filteredData]);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [])
   return (
     <div className="layout">
       <div className={styles.storeWrapper}>

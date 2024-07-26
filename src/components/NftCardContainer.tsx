@@ -10,6 +10,8 @@ const NftCardContainer = (props: NftCardContainerProps) => {
   return (
     <div className={styles.nftCardsWrapper}>
       {
+        props.data.length > 0
+        ?
         props.data.map((item) => (
           <NftCard 
             key={item.id}
@@ -21,17 +23,9 @@ const NftCardContainer = (props: NftCardContainerProps) => {
             timeLeft={item.timeLeft}
             category={props.category}/>
         ))
+        :
+        <p style={{color: "red", fontSize: 20}}>*Content not found</p>
       }
-      {/* <NftCard/>
-      <NftCard/>
-      <NftCard/>
-      <NftCard/>
-      <NftCard/>
-      <NftCard/>
-      <NftCard/>
-      <NftCard/>
-      <NftCard/>
-      <NftCard/> */}
     </div>
   )
 }
