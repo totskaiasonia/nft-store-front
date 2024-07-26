@@ -1,10 +1,21 @@
 import NftCollectionMin from './NftCollectionMin';
 import styles from './NftCollectionMinContainer.module.css';
 
-const NftCollectionMinContainer = () => {
+interface NftCollectionMinContainerProps {
+  collectionNames: string[];
+}
+
+const NftCollectionMinContainer = (props: NftCollectionMinContainerProps) => {
   return (
     <div className={styles.nftCollectionsWrapper}>
-      <div className={styles.nftCollectionMinWrapper}>
+      {
+        props.collectionNames.map(item => (
+          <div className={styles.nftCollectionMinWrapper}>
+            <NftCollectionMin collectionName={item}/>
+          </div>
+        ))
+      }
+      {/* <div className={styles.nftCollectionMinWrapper}>
         <NftCollectionMin/>
       </div>
       <div className={styles.nftCollectionMinWrapper}>
@@ -12,10 +23,7 @@ const NftCollectionMinContainer = () => {
       </div>
       <div className={styles.nftCollectionMinWrapper}>
         <NftCollectionMin/>
-      </div>
-      <div className={styles.nftCollectionMinWrapper}>
-        <NftCollectionMin/>
-      </div>
+      </div> */}
     </div>
   )
 }

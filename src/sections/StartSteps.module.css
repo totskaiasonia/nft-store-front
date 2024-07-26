@@ -33,8 +33,6 @@
     transform: translateX(0);
     transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
 }
-.stepContent {
-}
 
 .stepEnter {
     opacity: 0;

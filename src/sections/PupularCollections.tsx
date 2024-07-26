@@ -4,7 +4,13 @@ import styles from './PupularCollections.module.css';
 
 import Wave from 'react-wavify';
 
+const popularCollectionsNames = [
+    'Crypto Creatures',
+    'Pixel gigies',
+]
+
 const PupularCollections = () => {
+
   return (
     <>
         <h3 className={styles.title}>popular nft <span>collections</span></h3>
@@ -33,10 +39,10 @@ const PupularCollections = () => {
                 <div className={styles.mainInfoWrapper}>
                     <div className={`${styles.mainInfoContent} layout`}>
                         <div className={styles.fullCollectionWrapper}>
-                            <NftCollectionFull/>
+                            <NftCollectionFull collectionName={popularCollectionsNames[0]}/>
                         </div>
                         <div className={styles.minCollectionsWrapper}>
-                            <NftCollectionMinContainer/>
+                            <NftCollectionMinContainer collectionNames={[popularCollectionsNames[1], popularCollectionsNames[1], popularCollectionsNames[1], popularCollectionsNames[1]]}/>
                         </div>
                     </div>
                 </div>
