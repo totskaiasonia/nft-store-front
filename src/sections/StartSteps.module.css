@@ -29,6 +29,21 @@
     display: flex;
     justify-content: space-around;
     padding: 100px 0;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+.stepContent {
+}
+
+.stepEnter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.stepExit {
+    opacity: 0;
+    transform: translateX(-100%);
 }
 
 .title {

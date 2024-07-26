@@ -1,12 +1,54 @@
 import Wave from 'react-wavify';
 import styles from './StartSteps.module.css';
 
-import { PiUserCircleThin } from "react-icons/pi";
+import { PiUserCircleThin, PiWallet } from "react-icons/pi";
+import { RiAuctionLine } from "react-icons/ri";
 
 import '../App.css';
 import MyStepper from '../components/ui/MyStepper';
+import { useEffect, useState } from 'react';
+
+const steps = [
+    {
+        icon: <PiUserCircleThin size={200}/>,
+        title: 'Sign up',
+        buttonTitle: 'sign up now',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sequi harum sunt, voluptatem at quam dolorem, provident maxime cupiditate dolor exercitationem unde enim nostrum numquam, optio laborum reiciendis dolore excepturi!',
+    },
+    {
+        icon: <PiWallet size={200}/>,
+        title: 'Connect wallet',
+        buttonTitle: 'connect wallet now',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sequi harum sunt, voluptatem at quam dolorem, provident maxime cupiditate dolor exercitationem unde enim nostrum numquam, optio laborum reiciendis dolore excepturi!',
+    },
+    {
+        icon: <RiAuctionLine size={200}/>,
+        title: 'Start auction',
+        buttonTitle: 'start auction now',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sequi harum sunt, voluptatem at quam dolorem, provident maxime cupiditate dolor exercitationem unde enim nostrum numquam, optio laborum reiciendis dolore excepturi!',
+    },
+]
 
 const StartSteps = () => {
+    const [activeStep, setActiveStep] = useState<number>(0);
+    const [transitionClass, setTransitionClass] = useState('');
+
+    const nextStep = () => {
+        setTransitionClass(styles.stepExit);
+        setTimeout(() => {
+            setActiveStep((prev) => (prev + 1) % steps.length);
+        }, 500); // Duration of the transition
+    };
+    
+    useEffect(() => {
+        // Add transition class when step changes
+        setTransitionClass(styles.stepEnter);
+        const timeoutId = setTimeout(() => {
+            setTransitionClass('');
+        }, 500); // Duration of the transition
+
+        return () => clearTimeout(timeoutId);
+    }, [activeStep]);
     return (
         <>
             <h3 className={styles.title}><span>create and sell</span> your nfts</h3>
@@ -34,18 +76,20 @@ const StartSteps = () => {
                 </div>
                 <div className={styles.mainInfoWrapper}>
                     <div style={{marginTop: '30px'}}>
-                        <MyStepper/>
+                        <MyStepper activeStep={activeStep}/>
                     </div>
-                    <div className={`${styles.mainInfoContent} layout`}>
-                        <PiUserCircleThin size={200}/>
-                        <div className={styles.stepsDescWrapper}>
-                            <h2>Sign up</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sequi harum sunt, voluptatem at quam dolorem, provident maxime cupiditate dolor exercitationem unde enim nostrum numquam, optio laborum reiciendis dolore excepturi!</p>
-                            <div className={styles.stepsBtnWrapper}>
-                                <button>sign up now</button>
-                                <button style={{background: 'rgba(248, 248, 248, 0.2)'}}>next step</button>
+                    <div className={`${styles.mainInfoContent} layout ${transitionClass}`}>
+                            {
+                                steps[activeStep].icon
+                            }
+                            <div className={styles.stepsDescWrapper}>
+                                <h2>{steps[activeStep].title}</h2>
+                                <p>{steps[activeStep].text}</p>
+                                <div className={styles.stepsBtnWrapper}>
+                                    <button>{steps[activeStep].buttonTitle}</button>
+                                    <button style={{background: 'rgba(248, 248, 248, 0.2)'}} onClick={() => nextStep()}>next step</button>
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

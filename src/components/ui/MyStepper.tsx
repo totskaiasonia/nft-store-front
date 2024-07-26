@@ -17,16 +17,30 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
     [`&.${stepConnectorClasses.alternativeLabel}`]: {
         top: 27,
     },
-    [`&.${stepConnectorClasses.active}`]: {
+    [`&.${stepConnectorClasses.active}, &.${stepConnectorClasses.completed}`]: {
         [`& .${stepConnectorClasses.line}`]: {
-            background:
-                "#7E76DA",
+            animation: 'fillLine 1500ms forwards',
         },
     },
-    [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+        
+    },
+    [`&.${stepConnectorClasses.active}`]: {
         [`& .${stepConnectorClasses.line}`]: {
-            background:
-                "#7E76DA",
+            height: 3,
+            border: 0,
+            backgroundColor: theme.palette.mode === "dark" ? theme.palette.grey[800] : "#eaeaf0",
+            borderRadius: 1,
+            '@keyframes fillLine': {
+                '0%': {
+                    width: '0%',
+                    backgroundColor: theme.palette.mode === "dark" ? theme.palette.grey[800] : "#eaeaf0",
+                },
+                '100%': {
+                    width: '100%',
+                    backgroundColor: "#7E76DA",
+                },
+            }
         },
     },
     [`& .${stepConnectorClasses.line}`]: {
@@ -66,15 +80,19 @@ const ColorlibStepIconRoot = styled("div")<{ownerState: { completed?: boolean; a
     borderRadius: "50%",
     justifyContent: "center",
     alignItems: "center",
+    transition: 'background-image 1500ms ease-in-out',
     ...(ownerState.active && {
-      backgroundImage:
-        "linear-gradient(136deg, #f09, #0ff)",
       boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
+      animation: 'fillIcon 1500ms forwards 1s',
     }),
     ...(ownerState.completed && {
       backgroundImage:
         "linear-gradient(136deg, #f09, #0ff)",
     }),
+    '@keyframes fillIcon': {
+        from: { backgroundImage: 'none' },
+        to: { backgroundImage: "linear-gradient(136deg, #f09, #0ff)" },
+    },
 }));
   
 function ColorlibStepIcon(props: StepIconProps) {
@@ -104,13 +122,16 @@ const steps = [
     "Connect your wallet",
     "Start auction",
 ];
-  
 
-const MyStepper = () => {
+interface MyStepperProps {
+    activeStep: number;
+}
+
+const MyStepper = (props: MyStepperProps) => {
     return (
         <ColorLibStepper
             alternativeLabel
-            activeStep={1}
+            activeStep={props.activeStep}
             connector={<ColorlibConnector />}
         >
             {steps.map((label) => (
