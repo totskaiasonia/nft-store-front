@@ -1,5 +1,3 @@
-import Footer from "../sections/Footer"
-import Header from "../sections/Header"
 import { Outlet } from 'react-router-dom'
 
 const RootLayout = () => {

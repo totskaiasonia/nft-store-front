@@ -21,8 +21,6 @@ import { useEffect, useState } from 'react';
 
 
 
-const itemsPerPage = 16;
-
 const Store = () => {
   const [filteredData, setFilteredData] = useState(nfts);
   const [filteredCollections, setFilteredCollections] = useState(collections.map(item => item.name))
@@ -39,7 +37,9 @@ const Store = () => {
 
 
   const handlePaginationChange = (event: any, value: any) => {
+    event.preventDefault();
     setActivePage(value - 1);
+    window.scroll(0, 0);
 };
   
   

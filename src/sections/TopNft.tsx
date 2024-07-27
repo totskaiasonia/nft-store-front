@@ -11,11 +11,12 @@ import { FaAngleRight } from "react-icons/fa6";
 
 import nfts from '../data/nfts';
 
+const randIndex = Math.floor(Math.random() * 20);
+const cards = nfts.slice(randIndex, randIndex+5)
+
 const TopNft = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [centerSlideIndex, setCenterSlideIndex] = useState(0);
-  const randIndex = Math.floor(Math.random() * 20);
-  const [cards, setCards] = useState(nfts.slice(randIndex, randIndex+5))
 
   let settings = {
     className: styles.nftCardsWrapper,

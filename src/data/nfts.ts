@@ -443,6 +443,198 @@ const nfts = [
         categories: ['art', 'pixel', 'animated']
     },
     {
+        id: 25,
+        name: "Kitty mem",
+        author: "Gilad Gray",
+        image: nft26,
+        price: 1.33,
+        timeLeft: {
+            h: 11,
+            m: 4,
+            s: 4
+        },
+        amountLeft: 3,
+        totalAmount: 10,
+        collection: "MD mems",
+        categories: ['art', 'pixel']
+    },
+    {
+        id: 26,
+        name: "Purple sky kx2",
+        author: "Emma Timson",
+        image: nft27,
+        price: 0.44,
+        timeLeft: {
+            h: 23,
+            m: 32,
+            s: 59
+        },
+        amountLeft: 16,
+        totalAmount: 20,
+        collection: "Purple art",
+        categories: ['pixel', 'art']
+    },
+    {
+        id: 27,
+        name: "Purple sky kk2",
+        author: "Emma Timson",
+        image: nft28,
+        price: 0.44,
+        timeLeft: {
+            h: 23,
+            m: 32,
+            s: 59
+        },
+        amountLeft: 16,
+        totalAmount: 20,
+        collection: "Purple art",
+        categories: ['pixel', 'art']
+    },
+    {
+        id: 28,
+        name: "Purple sky kl2",
+        author: "Emma Timson",
+        image: nft29,
+        price: 0.14,
+        timeLeft: {
+            h: 23,
+            m: 32,
+            s: 59
+        },
+        amountLeft: 16,
+        totalAmount: 20,
+        collection: "Purple art",
+        categories: ['pixel', 'art']
+    },
+    {
+        id: 29,
+        name: "Pixel Cave",
+        author: "Sam Whiten",
+        image: nft30,
+        price: 0.004,
+        timeLeft: {
+            h: 1,
+            m: 52,
+            s: 1
+        },
+        amountLeft: 16,
+        totalAmount: 20,
+        collection: "Metaverse Masters",
+        categories: ['gaiming', 'pixel', 'art']
+    },
+    {
+        id: 30,
+        name: "Purple sky kl2",
+        author: "Sam Whiten",
+        image: nft31,
+        price: 0.004,
+        timeLeft: {
+            h: 1,
+            m: 52,
+            s: 1
+        },
+        amountLeft: 16,
+        totalAmount: 20,
+        collection: "Metaverse Masters",
+        categories: ['gaiming', 'pixel', 'art']
+    },
+    {
+        id: 31,
+        name: "Moderno",
+        author: "Edward Unknown",
+        image: nft32,
+        price: 0.2304,
+        timeLeft: {
+            h: 12,
+            m: 52,
+            s: 14
+        },
+        amountLeft: 6,
+        totalAmount: 10,
+        collection: "ModernizM",
+        categories: ['modern', 'art']
+    },
+    {
+        id: 32,
+        name: "Moderno Tower",
+        author: "Edward Unknown",
+        image: nft33,
+        price: 5.204,
+        timeLeft: {
+            h: 12,
+            m: 52,
+            s: 14
+        },
+        amountLeft: 6,
+        totalAmount: 10,
+        collection: "ModernizM",
+        categories: ['modern', 'art']
+    },
+    {
+        id: 33,
+        name: "Teenage Ape",
+        author: "Tom Smith",
+        image: nft34,
+        price: 5.204,
+        timeLeft: {
+            h: 12,
+            m: 52,
+            s: 14
+        },
+        amountLeft: 6,
+        totalAmount: 10,
+        collection: "Crypto Creatures",
+        categories: ['modern', 'art']
+    },
+    {
+        id: 34,
+        name: "Sailor Ape",
+        author: "Tom Smith",
+        image: nft35,
+        price: 4.21,
+        timeLeft: {
+            h: 12,
+            m: 52,
+            s: 14
+        },
+        amountLeft: 6,
+        totalAmount: 10,
+        collection: "Crypto Creatures",
+        categories: ['modern', 'art']
+    },
+    {
+        id: 35,
+        name: "Golden Ape",
+        author: "Tom Smith",
+        image: nft36,
+        price: 1.91,
+        timeLeft: {
+            h: 12,
+            m: 52,
+            s: 14
+        },
+        amountLeft: 6,
+        totalAmount: 10,
+        collection: "Crypto Creatures",
+        categories: ['modern', 'art']
+    },
+    {
+        id: 36,
+        name: "Sky",
+        author: "Edward Unknown",
+        image: nft37,
+        price: 1.91,
+        timeLeft: {
+            h: 12,
+            m: 52,
+            s: 14
+        },
+        amountLeft: 6,
+        totalAmount: 10,
+        collection: "ModernizM",
+        categories: ['modern', 'art']
+    },
+    {
         id: 37,
         name: "Topper pumpkey #1",
         author: "Edward Unknown",

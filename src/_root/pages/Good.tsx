@@ -50,7 +50,7 @@ const Good = () => {
                 <div className={styles.mainInfo}>
                     <h1>{nft.name}</h1>
                     <div className={styles.mainInfo_author}>
-                        <p>Tom Smith</p>
+                        <p>{nft.author}</p>
                         <img src={avaImg} alt="" />
                     </div>
                 </div>

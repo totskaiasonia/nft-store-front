@@ -12,7 +12,7 @@ interface NftCollectionFullProps {
 const NftCollectionFull = (props: NftCollectionFullProps) => {
   const [filteredNfts, setFilteredNfts] = useState<any>([]);
   useEffect(() => {
-    setFilteredNfts(nfts.filter(item => item.collection === props.collectionName))
+    setFilteredNfts(nfts.filter(item => item.collection === props.collectionName).slice(0, 4))
   }, []);
   return (
     <div className={styles.collectionWrapper}>
@@ -24,7 +24,7 @@ const NftCollectionFull = (props: NftCollectionFullProps) => {
           }
         </div>
         <div>
-        <h4>bored ape</h4>
+        <h4>{props.collectionName}</h4>
 
         <div className={styles.usersWrapper}>
             <div className={styles.usersImgs}>
