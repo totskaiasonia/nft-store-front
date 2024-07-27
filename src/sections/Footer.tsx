@@ -1,5 +1,6 @@
 import styles from './Footer.module.css';
 import logo from '../assets/logo.svg';
+import { config } from '../setup';
 
 const Footer = () => {
   return (
@@ -8,9 +9,9 @@ const Footer = () => {
         <div className={styles.footerMainInfoWrapper}>
           <div>
             <img className={styles.logo} src={logo}/>
-            <p>+00000000000</p>
-            <p>exampe@gmail.com</p>
-            <p>st. Example, 8</p>
+            <p>{config.footer_phone_number}</p>
+            <p>{config.footer_email}</p>
+            <p>{config.footer_address}</p>
           </div>
           <div>
             <h4>Navigation</h4>

@@ -38,7 +38,7 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
                 },
                 '100%': {
                     width: '100%',
-                    backgroundColor: "#7E76DA",
+                    backgroundColor: "var(--primary-color)",
                 },
             }
         },
@@ -73,7 +73,7 @@ const ColorLibStepper = styled(Stepper)({
 const ColorlibStepIconRoot = styled("div")<{ownerState: { completed?: boolean; active?: boolean };}>(({ theme, ownerState }) => ({
     backgroundColor: theme.palette.grey[700],
     zIndex: 1,
-    color: "#fff",
+    color: "var(--stepper_icon-color)",
     width: 60,
     height: 60,
     display: "flex",
@@ -87,11 +87,11 @@ const ColorlibStepIconRoot = styled("div")<{ownerState: { completed?: boolean; a
     }),
     ...(ownerState.completed && {
       backgroundImage:
-        "linear-gradient(136deg, #f09, #0ff)",
+        "linear-gradient(136deg, var(--stepper_icon_gradient-color_1), var(--stepper_icon_gradient-color_2))",
     }),
     '@keyframes fillIcon': {
         from: { backgroundImage: 'none' },
-        to: { backgroundImage: "linear-gradient(136deg, #f09, #0ff)" },
+        to: { backgroundImage: "linear-gradient(136deg, var(--stepper_icon_gradient-color_1), var(--stepper_icon_gradient-color_2))" },
     },
 }));
   

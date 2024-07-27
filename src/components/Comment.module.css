@@ -1,5 +1,5 @@
 .comment {
-    background: #31354C;
+    background: var(--secondary-color);
     border-radius: 20px;
     color: white;
     padding: 20px 40px;

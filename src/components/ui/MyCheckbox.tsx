@@ -30,7 +30,7 @@ const Icon = styled('span')(({ theme }) => ({
   }));
   
   const CheckedIcon = styled(Icon)({
-    backgroundColor: '#7E76DA',
+    backgroundColor: 'var(--primary-color)',
     backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
     '&::before': {
       display: 'block',
@@ -43,7 +43,7 @@ const Icon = styled('span')(({ theme }) => ({
       content: '""',
     },
     'input:hover ~ &': {
-      backgroundColor: '#635daa',
+      backgroundColor: 'var(--primary-color)',
     },
   });
 

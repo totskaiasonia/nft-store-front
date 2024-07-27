@@ -5,11 +5,13 @@ import { IoFilter } from "react-icons/io5";
 
 import nfts from '../data/nfts';
 
+import { config } from '../setup';
+
 const Store = () => {
   const randIndex = Math.floor(Math.random() * 15);
   return (
     <div className='layout'>
-        <h3 className={styles.title}>store</h3>
+        <h3 className={styles.title}>{config.section_3_title_before_outline} <span>{config.section_3_title_outline}</span> {config.section_3_title_after_outline}</h3>
         <div className={styles.storeSettingsWrapper}>
             <ShortCategories/>
             <button className={styles.storeFilterBtn}>

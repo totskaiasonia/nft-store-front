@@ -2,7 +2,7 @@ import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 
 const MySlider = styled(Slider)({
-    color: '#7E76DA',
+    color: 'var(--primary-color)',
     height: 8,
     '& .MuiSlider-track': {
       border: 'none',
@@ -24,7 +24,7 @@ const MySlider = styled(Slider)({
       width: 32,
       height: 32,
       borderRadius: '50% 50% 50% 0',
-      backgroundColor: '#7E76DA',
+      backgroundColor: 'var(--primary-color)',
       transformOrigin: 'bottom left',
       transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
       '&::before': { display: 'none' },

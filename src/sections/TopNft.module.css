@@ -9,7 +9,7 @@
     font-weight: 600;
 }
 .title span {
-    background: linear-gradient(to right, #F88C8C, #5795CA, #57CAB9);
+    background: linear-gradient(to right, var(--gradient-1-color), var(--gradient-2-color), var(--gradient-3-color));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;

@@ -9,5 +9,5 @@
     border: none;
 }
 .isActive {
-    color: #7E76DA;
+    color: var(--primary-color);
 }

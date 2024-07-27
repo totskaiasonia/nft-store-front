@@ -80,7 +80,7 @@
     border-radius: 5px;
 }
 .makeBid > button {
-    background: #7E76DA;
+    background: var(--primary-color);
     color: white;
     border-radius: 10px;
     width: 92px;

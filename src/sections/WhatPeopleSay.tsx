@@ -1,5 +1,6 @@
 import '../App.css';
 import Comment from '../components/Comment';
+import { config } from '../setup';
 import styles from './WhatPeopleSay.module.css';
 import { useInView, animated } from '@react-spring/web'
 
@@ -65,7 +66,7 @@ const WhatPeopleSay = () => {
 
   return (
     <div className={`${styles.wrapper} layout`}>
-        <h3 className={styles.title}><span>what people say </span>about us</h3>
+        <h3 className={styles.title}>{config.section_5_title_before_outline} <span>{config.section_5_title_outline}</span> {config.section_5_title_after_outline}</h3>
         <animated.div ref={ref1} style={springs1}>
           <div className={styles.commentWrapper} style={{width: '50%'}}>
               <Comment text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut consequat purus. Quisque accumsan magna.'/>

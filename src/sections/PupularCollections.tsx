@@ -4,6 +4,8 @@ import styles from './PupularCollections.module.css';
 
 import Wave from 'react-wavify';
 
+import { config } from '../setup';
+
 const popularCollectionsNames = [
     'Crypto Creatures',
     'Pixel gigies',
@@ -16,7 +18,7 @@ const PupularCollections = () => {
 
   return (
     <>
-        <h3 className={styles.title}>popular nft <span>collections</span></h3>
+        <h3 className={styles.title}>{config.section_4_title_before_outline} <span>{config.section_4_title_outline}</span> {config.section_4_title_after_outline}</h3>
         <div className={styles.sectionWrapper}>
                 <Wave style={{display: 'flex'}} 
                     fill="url(#gradient)"
@@ -28,9 +30,9 @@ const PupularCollections = () => {
                 }}>
                     <defs>
                         <linearGradient id="gradient" gradientTransform="rotate(13)">
-                            <stop offset="20%"  stopColor="#FEC8F2" />
-                            <stop offset="50%" stopColor="#E0FBF2" />
-                            <stop offset="90%" stopColor="#C5D6EF" />
+                            <stop offset="20%"  stopColor={`${config.gradient_color_1}70`} />
+                            <stop offset="50%" stopColor={`${config.gradient_color_2}70`} />
+                            <stop offset="90%" stopColor={`${config.gradient_color_3}70`} />
                         </linearGradient>
                     </defs>
                 </Wave>

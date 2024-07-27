@@ -6,7 +6,7 @@
     margin-bottom: -40px;
 }
 .title span {
-    background: linear-gradient(to right, #F88C8C, #5795CA, #57CAB9);
+    background: linear-gradient(to right, var(--gradient-1-color), var(--gradient-2-color), var(--gradient-3-color));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -34,16 +34,16 @@
 }
 
 .curveFill {
-    fill: #31354D;
+    fill: var(--secondary-color);
 }
 
 .mainInfoWrapper {
-    background: #31354D;
+    background: var(--secondary-color);
 }
 .mainInfoContent {
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 100px 0;
 }
 

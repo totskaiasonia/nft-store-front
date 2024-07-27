@@ -11,6 +11,8 @@ import { FaAngleRight } from "react-icons/fa6";
 
 import nfts from '../data/nfts';
 
+import { config } from '../setup';
+
 const randIndex = Math.floor(Math.random() * 20);
 const cards = nfts.slice(randIndex, randIndex+5)
 
@@ -51,7 +53,7 @@ const TopNft = () => {
 
   return (
     <div className={styles.topNftSectionWrapper} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-        <h3 className={styles.title}>top nft of <span>month</span></h3>
+        <h3 className={styles.title}>{config.section_1_title_before_outline} <span>{config.section_1_title_outline}</span> {config.section_1_title_after_outline}</h3>
         {/* <div className={styles.nftCardsWrapper}> */}
           <Slider {...settings} afterChange={handleAfterChange}>
             {

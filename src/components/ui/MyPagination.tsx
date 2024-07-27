@@ -7,7 +7,7 @@ const MyPagination = styled(Pagination)({
       marginRight: '20px'
     },
     '& .MuiPaginationItem-root.Mui-selected': {
-      backgroundColor: '#7E76DA',
+      backgroundColor: 'var(--primary-color)',
       color: 'white',
       transform: 'scale(1.2)'
     },

@@ -1,5 +1,5 @@
 .footer {
-    background: #31354C;
+    background: var(--secondary-color);
 }
 
 .logo {

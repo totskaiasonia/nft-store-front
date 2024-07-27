@@ -19,7 +19,7 @@
 .introTitle span {
     font-size: 80px;
     text-transform: uppercase;
-    color: #7E76DA;
+    color: var(--primary-color);
     font-weight: 600;
 }
 
@@ -44,7 +44,7 @@
     font-size: 0.875em;
     letter-spacing: 0.1em;
     color: #ccd;
-    color: #7E76DA;
+    color: var(--primary-color);
     cursor: pointer;
 }
 .inputGroup__input {
@@ -57,7 +57,7 @@
     padding: 0.8em 1em;
     border: 2px solid transparent;
     background-image: linear-gradient(#fff, #fff),
-      linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+      linear-gradient(120deg, var(--search_gradient-1-color) 0%, var(--search_gradient-2-color) 50%, var(--search_gradient-3-color) 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     border-radius: 1.8em;
@@ -69,7 +69,7 @@
 }
 
 .inputGroup__input:focus {
-  outline: 2px dashed #7E76DA;
+  outline: 2px dashed var(--primary-color);
   outline-offset: 0.5em;
 }
 
@@ -79,7 +79,7 @@
     border-radius: 50px;
     margin: 0 auto;
     padding: 10px 30px;
-    border: 2px solid #7e76da82;
+    border: 2px solid var(--primary-color);
 }
 
 .introBtn {
@@ -109,7 +109,11 @@
 */
  .categoriesCorousel {
     margin-top: 30px;
-    background: linear-gradient(to right, #f88c8c8a, #5794ca7a, #57cab97d);
+    background: 
+      linear-gradient(120deg, 
+                      color-mix(in srgb, var(--gradient-1-color), transparent 54%) 0%, 
+                      color-mix(in srgb, var(--gradient-2-color), transparent 54%) 50%, 
+                      color-mix(in srgb, var(--gradient-3-color), transparent 54%) 100%);
 } 
 
 @property --start {

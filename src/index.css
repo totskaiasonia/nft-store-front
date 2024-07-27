@@ -4,6 +4,17 @@
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --primary-color: #7E76DA;
+  --secondary-color: #31354D;
+  --gradient-1-color: #F88C8C;
+  --gradient-2-color: #5795CA;
+  --gradient-3-color: #57CAB9;
+  --search_gradient-1-color: #f09;
+  --search_gradient-2-color: #0ff;
+  --search_gradient-3-color: #9f0;
+  --stepper_icon_gradient-color_1: #f09;
+  --stepper_icon_gradient-color_2: #0ff;
+  --stepper_icon-color: #fff;
 }
 
 body, html {
@@ -17,7 +28,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--primary-color);
 }
 
 button {
